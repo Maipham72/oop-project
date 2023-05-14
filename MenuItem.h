@@ -1,23 +1,29 @@
-#include <string>
 #include <iostream>
+#include <string>
+using namespace std;
 #ifndef MENUITEM_H
 #define MENUITEM_H
 
-
 class MenuItem {
  protected:
-  std::string name;
+  std::string names;
   float price;
 
  public:
- void viewMenu(){
-  
- }
- float getPrice(){
-  return this->price;
- }
+  // Default constructor
+  MenuItem() : names(""), price(0){};
+  MenuItem(std::string names, float price) : names(names), price(price) {}
+
+  // A virtual print function to be overridden
   virtual void print() {
-    std::cout << this->name << " and its price is : " << this->price << std::endl;
-  };
+    std::cout << this->names << "is " << this->price << " dollars" << std::endl;
+  }
+
+  // Returns the price of the item
+  float getPrice() { return this->price; }
+
+  // Returns the name of the item
+  std::string getName() { return this->names; }
 };
+
 #endif

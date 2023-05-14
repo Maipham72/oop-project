@@ -4,5 +4,6 @@
 class Store {
  protected:
  public:
+
 };
 #endif
