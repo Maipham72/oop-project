@@ -7,13 +7,13 @@
 
 class Drinks : public MenuItem {
  private:
-  int iceLevel;
+  int iceLevel; 
   int sugarLevel;
 
  public:
   // Default constructor
   Drinks() {
-    this->names = "Drinks";
+    this->names = "Drinks"; // 
     this->price = 0;
     this->iceLevel = 100;
     this->sugarLevel = 100;

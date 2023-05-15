@@ -14,7 +14,7 @@ class CardPayment : public Payment {
   CardPayment() : Payment() { cardBalance = 30; }
   /*Initialises a card payment object with a balance of 30 and the amount of the
    * payment*/
-  CardPayment(float balance, float amount) {
+  CardPayment( float amount) {
     this->cardBalance = 30;
     this->amount = amount;
   }
@@ -23,6 +23,8 @@ class CardPayment : public Payment {
   void ProcessCard(bool paid) {
     if (paid = 1) {
       std::cout << "Payment sucessful " << std::endl;
+      cardBalance = cardBalance - get_amount();
+      std::cout << "Your balance is " << cardBalance << std::endl;
     } else {
       std::cout << "Payment not sucessful, insufficient balance" << std::endl;
     }
@@ -30,7 +32,7 @@ class CardPayment : public Payment {
 
 //Function for the customer to pay
   bool pay(float amount) {
-    if (amount == cardBalance) {
+    if (amount <= cardBalance) {
       ProcessCard(1);
       return 1;
     } else {

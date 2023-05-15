@@ -6,7 +6,7 @@
 #ifndef CART_H
 #define CART_H
 
-class Cart : MenuItem{
+class Cart{
  protected:
   float total;
   std::vector<MenuItem> item_list;
@@ -19,7 +19,7 @@ class Cart : MenuItem{
 //Prints out the items in the cart
   void getCartItem() {
     for (int i = 0; i < item_list.size(); i++) {
-      item_list[i].print();
+      std::cout << item_list[i].getName() << " " << item_list[i].getPrice() << std::endl;
     }
   }
 

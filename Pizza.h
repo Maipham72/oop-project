@@ -8,7 +8,6 @@
 class Pizza : public MenuItem {
  private:
   std::string topping;
-
  public:
   // Default constructor
   Pizza() : MenuItem(), topping("") {}
@@ -29,6 +28,8 @@ class Pizza : public MenuItem {
     std::cout << this->names << " is " << this->price
               << " dollars and its topping is " << this->topping << std::endl;
   }
+
+  void printPizzaChoice();
 };
 
 #endif

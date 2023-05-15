@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "payment.h"
 #ifndef CASHPAYMENT_H
 #define CASHPAYMENT_H
@@ -17,6 +16,14 @@ class cashPayment : public Payment {
   cashPayment(float amount) {
     this->amount = amount;
     this->paid = 0;
+  }
+
+  void ProcessCash(bool paid) {
+    if (paid == 1) {
+      std::cout << "Payment sucessful " << std::endl;
+    } else {
+      std::cout << "Payment not sucessful, insufficient balance" << std::endl;
+    }
   }
 
 //Function to pay 

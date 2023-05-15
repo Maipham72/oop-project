@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
 
-#include "printArt.cpp"
-// #include "MenuItem.h"
 #include "Cart.h"
 #include "Customer.h"
+#include "Menu.cpp"
 #include "Pizza.h"
+#include "cardPayment.h"
+#include "cashPayment.h"
+#include "printArt.cpp"
+using namespace std;
 
 int main() {
   string fileName = "mj.txt";
@@ -20,23 +23,11 @@ int main() {
   cout << endl;
 
   if (menu == 1) {
-    cout << "This is our menu: \n"
-         << "[1] Pizza (including all toppings)"
-         << " "
-         << "$10 \n"
-         << "[2] Burger"
-         << "                         "
-         << "$9.5 \n"
-         << "[3] Bubble Tea"
-         << "                     "
-         << "$7.0 \n"
-         << "[4] Coffee"
-         << "                         "
-         << "$6.5" << endl;
+    printMenu();
   }
 
   int choice;
-  cout << "What do you want to order? " << endl;
+  std::cout << "What do you want to order? " << endl;
   cin >> choice;
 
   if (choice == 1) {
@@ -47,20 +38,22 @@ int main() {
     cin >> topping;
     if (topping == 1) {
       cout << "What topping do you want?\n"
-           << "[1] Margherita "
+           << "[1] Pineapple "
            << " "
            << "[2] Pepperoni" << endl;
       int topping_choice;
       cin >> topping_choice;
+
       if (topping_choice == 1) {
-        cout << "You have selected margherita pizza" << endl;
-        Pizza pizza("Margherita");
-        pizza.print();
+        cout << "You have selected pineapple pizza" << endl;
+        Pizza pizza("pineapple");
         cust1->addCart(pizza);
+
       } else if (topping_choice == 2) {
         cout << "You have selected pepperoni pizza" << endl;
-        Pizza pizza("Pepperoni");
-        pizza.print();
+        Pizza pizza("pepperoni");
+        cust1->addCart(pizza);
+
       } else {
         cout << "Invalid" << endl;
       }
@@ -75,9 +68,29 @@ int main() {
     cout << "You have selected burger" << endl;
   }
 
-  cust1->viewCart();
-  cout << endl;
-  cust1->getTotal();
+  bool paid = 0;
+  cout << "Would you like to proceed to payment? \n"
+       << "Type [1] for Yes, [2] for No \n"
+       << endl;
+
+  int payment_now;
+  cin >> payment_now;
+
+  CardPayment c(cust1->getTotal());
+  if (payment_now == 1) {
+    c.ProcessCard(1);
+  }
+
+  cashPayment c1(cust1->getTotal());
+  cout << "How much would you like to pay?" << endl;
+  float amountPaid;
+  cin >> amountPaid;
+  if (amountPaid == cust1->getTotal()) {
+    c1.ProcessCash(1);
+  } else {
+    c1.ProcessCash(0);
+  }
+
 
   return 0;
 }

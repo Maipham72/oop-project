@@ -24,6 +24,7 @@ class MenuItem {
 
   // Returns the name of the item
   std::string getName() { return this->names; }
+
 };
 
 #endif
