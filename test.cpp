@@ -5,6 +5,7 @@ using namespace std;
 #include "cart.h"
 #include "cashPayment.h"
 #include "customer.h"
+#include "cardPayment.h"
 int main() {
   // starting up
   Customer *c = new Customer();
@@ -65,4 +66,6 @@ int main() {
     return 0;
   } else {
   }
+  cardPayment t;
+
 }
