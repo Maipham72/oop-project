@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+#include "BubbleTeaChoice.cpp"
 #include "Cart.h"
 #include "Customer.h"
 #include "Menu.cpp"
@@ -68,12 +69,15 @@ int main() {
     cout << "You have selected burger" << endl;
   }
 
+  if (choice == 3) {
+    BubbleTea b = BubbleTeaChoice();
+  }
   bool paid = 0;
   cout << "Would you like to proceed to payment? \n"
        << "Type [1] for Yes, [2] for No \n"
        << endl;
 
-  int payment_now;
+  int payment_now = 0;
   cin >> payment_now;
 
   CardPayment c(cust1->getTotal());
@@ -90,7 +94,6 @@ int main() {
   } else {
     c1.ProcessCash(0);
   }
-
 
   return 0;
 }

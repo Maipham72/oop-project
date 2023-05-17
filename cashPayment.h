@@ -6,7 +6,7 @@
 class cashPayment : public Payment {
  protected:
   bool paid;
-
+float change;
  public:
   // Default constructor
   cashPayment() { paid = 0; }
@@ -28,8 +28,10 @@ class cashPayment : public Payment {
 
 //Function to pay 
   bool pay(float amount) {
-    if (amount == this->amount) {
+    if (amount >= this->amount) {
+      change = amount - this->amount;
       paid = 1;
+      cout << "Payment sucessful, change of " << change << endl;
       return 1;
     } else {
       paid = 0;

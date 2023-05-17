@@ -1,12 +1,10 @@
 #include "Pizza.h"
 
 #include <iostream>
-Pizza* PizzaChoice() {
-  Pizza *pizza = new Pizza();
-  cout
-      << "You have selected pizza. Do you want to add any topping with it? "
-         "Press [1] for YES, [2] for NO"
-      << endl;
+Pizza PizzaChoice() {
+  Pizza pizza("Pepperoni");
+  cout<< "You have selected pizza. Do you want to add any topping with it? "
+         "Press [1] for YES, [2] for NO" << endl;
   int topping = 0;
   cin >> topping;
 
@@ -20,11 +18,11 @@ Pizza* PizzaChoice() {
 
     if (topping_choice == 1) {
       cout << "You have selected pineapple pizza" << endl;
-      pizza->setTopping("Pineapple");
+      pizza.setTopping("Pineapple");
       return pizza;
     } else if (topping_choice == 2) {
       cout << "You have selected pepperoni pizza" << endl;
-      pizza->setTopping("Pepperoni");
+      pizza.setTopping("Pepperoni");
       return pizza;
     } else {
       cout << "Invalid" << endl;
