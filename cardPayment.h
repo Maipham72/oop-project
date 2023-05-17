@@ -4,7 +4,8 @@
 #ifndef CARDPAYMENT_H
 #define CARDPAYMENT_H
 
-/*This header file contains the CardPayment class. This class represents when the user chooses the card payment option. It F */
+/*This header file contains the CardPayment class. 
+This class represents when the user chooses the card payment option.*/
 class CardPayment : public Payment {
  protected:
   float cardBalance;

@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Cart.h"
 #include "MenuItem.h"
 
@@ -12,9 +13,7 @@ class Customer {
 
  public:
   // Default constructor
-  Customer() :orderID(0){
-    customerCart = new Cart();
-  }
+  Customer() : orderID(0) { customerCart = new Cart(); }
 
   // A constructor that takes in an orderID and assigns it to the customer
   // And creates alloctes a new cart for the customer
@@ -32,9 +31,7 @@ class Customer {
   // Adds an item to the cart
   void addCart(MenuItem f) { customerCart->addItem(f); }
 
-//Get customer's order ID
-  int getOrderID(){
-    return this->orderID;
-  }
+  // Get customer's order ID
+  int getOrderID() { return this->orderID; }
 };
 #endif

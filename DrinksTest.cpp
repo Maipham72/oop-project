@@ -56,6 +56,7 @@ class DrinksTest {
     {}
   }
   void testCoffee() {
+    // Test 1
     {
       Coffee* coffee = new Coffee();
       coffee->setCaffeineLevel(100);
@@ -63,6 +64,21 @@ class DrinksTest {
         cout << "Test 1 for coffee failed!" << endl;
       }
     }
+    // Test 2
+    {
+      Coffee* coffee = new Coffee();
+      coffee->setCaffeineLevel(25);
+      if (coffee->getCaffeineLevel() != 25) {
+        cout << "Test 2 for coffee failed!" << endl;
+      }
+    }
+    // Test 3
+    {
+      Coffee* coffee = new Coffee();
+      coffee->setCaffeineLevel(0);
+      if (coffee->getCaffeineLevel() != 0) {
+        cout << "Test 3 for coffee failed!" << endl;
+      }
+    }
   }
 };
-
