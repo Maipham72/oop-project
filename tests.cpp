@@ -3,4 +3,7 @@
 int main() {
   PaymentTest paymentTest;
   paymentTest.runTests();
+
+  DrinksTest drinkTest;
+  drinkTest.runDrinksTest();
 }

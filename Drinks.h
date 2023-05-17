@@ -27,13 +27,13 @@ class Drinks : public MenuItem {
   }
 
   // Sets the ice level of the drink
-  void setIceLevel(int iceLevel) { iceLevel = this->iceLevel; }
+  void setIceLevel(int iceLevel) { this->iceLevel = iceLevel; }
 
   // Returns the ice level of the drink
   int getIceLevel() const { return iceLevel; }
 
   // Sets the sugar level of the drink
-  void setSugarLevel(int sugarLevel) { sugarLevel = this->sugarLevel; }
+  void setSugarLevel(int sugarLevel) { this->sugarLevel = sugarLevel; }
 
   // Returns the sugar level of the drink
   int getSugarLevel() const { return sugarLevel; }

@@ -18,13 +18,13 @@ class Burger : public MenuItem {
       : MenuItem("Burger", 9.50), meatType(meatType), bunType(bunType) {}
 
   // Sets the type of meat
-  void setMeatType(std::string meatType) { meatType = this->meatType; }
+  void setMeatType(std::string meatType) { this->meatType = meatType; }
 
   // Returns the type of meat
   std::string getMeatType() { return meatType; }
 
   // Sets the type of bun
-  void setBunType(std::string bunType) { bunType = this->bunType; }
+  void setBunType(std::string bunType) { this->bunType = bunType; }
 
   // Returns the type of bun
   std::string getBunType() { return bunType; }

@@ -18,11 +18,11 @@ class Coffee : public Drinks {
 
   // Set the caffeine level
   void setCaffeineLevel(int caffeineLevel) {
-    caffeineLevel = this->caffeineLevel;
+    this->caffeineLevel = caffeineLevel;
   }
 
   // Returns the caffeine level
-  int getCaffeineLevel() const { return caffeineLevel; }
+  int getCaffeineLevel()  { return caffeineLevel; }
 
   // Prints the name, price, ice, sugar and caffeine level of the coffee object
   void print() {

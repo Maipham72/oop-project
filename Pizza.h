@@ -17,7 +17,7 @@ class Pizza : public MenuItem {
 
   // Sets the type of topping
   void setTopping(std::string topping) { 
-    topping = this->topping; 
+    this->topping = topping; 
   }
 
   // Returns the type of topping

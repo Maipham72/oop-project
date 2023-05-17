@@ -2,32 +2,67 @@
 #include "Coffee.h"
 #include "Drinks.h"
 
-class DrinksTest{
-    public : 
-void runDrinksTest(){testBubbleTea();
-testCoffee();
-}
-
-private:
-void testBubbleTea() {
-    //Test 1
-  {
-    BubbleTea* b = new BubbleTea("Black");
-    /*Expected ice and sugar level should be 100*/
-    /*Tea type should be Black and price should be 7*/
-
+class DrinksTest {
+ public:
+  void runDrinksTest() {
+    testDrinks();
+    testBubbleTea();
+    testCoffee();
   }
-  //Test 2
-  {
 
+ private:
+  void testDrinks() {
+    {
+      Drinks* d = new Drinks();
+      d->setIceLevel(100);
+      d->setSugarLevel(80);
+      if ((d->getIceLevel() != 100) || (d->getSugarLevel() != 80)) {
+        cout << "Test 1 for drinks failed!" << endl;
+      }
+    }
+    {
+      Drinks* d = new Drinks();
+      d->setIceLevel(75);
+      d->setSugarLevel(100);
+      if (d->getIceLevel() != 75 || d->getSugarLevel() != 100) {
+        cout << "Test 2 for drinks failed!" << endl;
+      }
+    }
+    {
+      Drinks* d = new Drinks();
+      d->setIceLevel(25);
+      d->setSugarLevel(25);
+      if (d->getIceLevel() != 25 || d->getSugarLevel() != 25) {
+        cout << "Test 3 for drinks failed!" << endl;
+      }
+    }
   }
-  //Test 3
-  {
-
+  void testBubbleTea() {
+    // Test 1
+    {
+      BubbleTea* bubbleTea = new BubbleTea("Black");
+      /*Tea type should be Black */
+      if (bubbleTea->getTeaType() != "Black") {
+        cout << "Test 1 for BubbleTeafailed!" << endl;
+      }
+    }
+    // Test 2
+    {
+      BubbleTea* bubbleTea = new BubbleTea("Green");
+      if (bubbleTea->getTeaType() != "Green") {
+        cout << "Test 2 for BubbleTea failed!" << endl;
+      }
+    }  // Test 3
+    {}
   }
-}
-void testCoffee(){
+  void testCoffee() {
+    {
+      Coffee* coffee = new Coffee();
+      coffee->setCaffeineLevel(100);
+      if (coffee->getCaffeineLevel() != 100) {
+        cout << "Test 1 for coffee failed!" << endl;
+      }
+    }
+  }
+};
 
-}
-}
-;

@@ -20,7 +20,7 @@ class BubbleTea : public Drinks {
       : Drinks(100, 100, "BubbleTea", 7), teaType(teaType) {}
 
   // Sets the type of tea
-  void setTeaType(std::string teaType) { teaType = this->teaType; }
+  void setTeaType(std::string teaType) { this->teaType = teaType; }
 
   // Returns the type of tea
   std::string getTeaType() { return teaType; }

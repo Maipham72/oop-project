@@ -40,7 +40,7 @@ class PaymentTest {
       cashPayment *cash_payment = new cashPayment(amount);
       // Incorrect amount will be paid
       // Expecting the returned boolean variable to be 0
-      if (cash_payment->pay(amount + 3) == 1) {
+      if (cash_payment->pay(amount - 3) == 1) {
         cout << "Test 3 for cash payment failed!" << endl;
       }
     }
