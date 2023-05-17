@@ -15,7 +15,7 @@ class Payment {
   }
 
   //Returns the payment amount
-  float get_amount() { return amount; }
+  float get_amount() { return this->amount; }
 
   // pure virtual function to be overridded
   virtual bool pay(float amount) = 0;

@@ -19,7 +19,7 @@ class Cart{
 //Prints out the items in the cart
   void getCartItem() {
     for (int i = 0; i < item_list.size(); i++) {
-      std::cout << item_list[i].getName() << " " << item_list[i].getPrice() << std::endl;
+      cout << item_list[i].getName() << " " << item_list[i].getPrice() << endl;
     }
   }
 

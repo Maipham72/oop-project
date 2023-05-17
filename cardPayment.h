@@ -14,17 +14,18 @@ class CardPayment : public Payment {
   CardPayment() : Payment() { cardBalance = 30; }
   /*Initialises a card payment object with a balance of 30 and the amount of the
    * payment*/
-  CardPayment( float amount) {
+  CardPayment(float amount) {
     this->cardBalance = 30;
     this->amount = amount;
   }
 
 //Prints out a message if payment is sucessful or not
   void ProcessCard(bool paid) {
-    if (paid = 1) {
+    if (paid == 1) {
       std::cout << "Payment sucessful " << std::endl;
-      cardBalance = cardBalance - get_amount();
-      std::cout << "Your balance is " << cardBalance << std::endl;
+      //Reduce card balance by the payment total
+      this->cardBalance -= get_amount();
+      std::cout << "Your balance is " << this->cardBalance << std::endl;
     } else {
       std::cout << "Payment not sucessful, insufficient balance" << std::endl;
     }

@@ -1,11 +1,11 @@
 #include <iostream>
 #include "Cart.h"
 #include "MenuItem.h"
-#include "Store.h"
+
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-class Customer : Cart {
+class Customer {
  private:
   int orderID;
   Cart* customerCart;
@@ -21,7 +21,7 @@ class Customer : Cart {
   Customer(int orderID) : orderID(orderID) { customerCart = new Cart(); }
 
   // Allows customer to view cart
-  void viewCart() { customerCart->getCartItem(); }
+  void viewCart() { this->customerCart->getCartItem(); }
 
   // Returns the total of the cart
   float getTotal() {
@@ -31,5 +31,10 @@ class Customer : Cart {
 
   // Adds an item to the cart
   void addCart(MenuItem f) { customerCart->addItem(f); }
+
+//Get customer's order ID
+  int getOrderID(){
+    return this->orderID;
+  }
 };
 #endif

@@ -28,7 +28,6 @@ class cashPayment : public Payment {
 
 //Function to pay 
   bool pay(float amount) {
-    std::cout << this->amount;
     if (amount == this->amount) {
       paid = 1;
       return 1;
