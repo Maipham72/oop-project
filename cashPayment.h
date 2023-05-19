@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "payment.h"
 #ifndef CASHPAYMENT_H
 #define CASHPAYMENT_H
@@ -6,7 +7,8 @@
 class cashPayment : public Payment {
  protected:
   bool paid;
-float change;
+  float change;
+
  public:
   // Default constructor
   cashPayment() { paid = 0; }
@@ -18,20 +20,19 @@ float change;
     this->paid = 0;
   }
 
+  /*Prints out a message whenever payment is successful*/
   void ProcessCash(bool paid) {
     if (paid == 1) {
-      std::cout << "Payment sucessful " << std::endl;
+      std::cout << "Payment successful " << std::endl;
     } else {
-      std::cout << "Payment not sucessful, insufficient balance" << std::endl;
+      std::cout << "Payment not successful, insufficient balance" << std::endl;
     }
   }
 
-//Function to pay 
+  // Function to pay
   bool pay(float amount) {
     if (amount >= this->amount) {
-      change = amount - this->amount;
       paid = 1;
-      cout << "Payment sucessful, change of " << change << endl;
       return 1;
     } else {
       paid = 0;

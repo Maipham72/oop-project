@@ -3,9 +3,11 @@
 
 #include "BubbleTeaChoice.cpp"
 #include "Cart.h"
+#include "Coffee.h"
 #include "Customer.h"
 #include "Menu.cpp"
 #include "Pizza.h"
+#include "PizzaChoice.cpp"
 #include "cardPayment.h"
 #include "cashPayment.h"
 #include "printArt.cpp"
@@ -32,37 +34,7 @@ int main() {
   cin >> choice;
 
   if (choice == 1) {
-    cout << "You have selected pizza. Do you want to add any topping with it? "
-            "Press [1] for YES, [2] for NO"
-         << endl;
-    int topping;
-    cin >> topping;
-    if (topping == 1) {
-      cout << "What topping do you want?\n"
-           << "[1] Pineapple "
-           << " "
-           << "[2] Pepperoni" << endl;
-      int topping_choice;
-      cin >> topping_choice;
-
-      if (topping_choice == 1) {
-        cout << "You have selected pineapple pizza" << endl;
-        Pizza pizza("pineapple");
-        cust1->addCart(pizza);
-
-      } else if (topping_choice == 2) {
-        cout << "You have selected pepperoni pizza" << endl;
-        Pizza pizza("pepperoni");
-        cust1->addCart(pizza);
-
-      } else {
-        cout << "Invalid" << endl;
-      }
-    } else if (topping == 0) {
-      cout << "You have choose no topping" << endl;
-    } else if (topping != 0 || topping != 1) {
-      cout << "Invalid answer, please try again" << endl;
-    }
+    Pizza pizza = PizzaChoice();
   }
 
   if (choice == 2) {
@@ -71,6 +43,10 @@ int main() {
 
   if (choice == 3) {
     BubbleTea b = BubbleTeaChoice();
+  }
+
+  if (choice == 4) {
+    Coffee c;
   }
   bool paid = 0;
   cout << "Would you like to proceed to payment? \n"
