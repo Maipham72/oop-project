@@ -16,7 +16,7 @@ class Customer {
   Customer() : orderID(0) { customerCart = new Cart(); }
 
   // A constructor that takes in an orderID and assigns it to the customer
-  // And creates alloctes a new cart for the customer
+  // And creates a new cart for the customer
   Customer(int orderID) : orderID(orderID) { customerCart = new Cart(); }
 
   // Allows customer to view cart
@@ -33,5 +33,8 @@ class Customer {
 
   // Get customer's order ID
   int getOrderID() { return this->orderID; }
+
+  // Destructor
+  ~Customer() { delete[] customerCart; }
 };
 #endif

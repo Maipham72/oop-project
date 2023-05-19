@@ -2,23 +2,23 @@
     "configurations": [
         {
             "name": "Linux",
+            "compilerPathInCppPropertiesJson": "/usr/bin/gcc",
             "includePath": [
-<<<<<<< HEAD
-                "${workspaceFolder}/**"
-=======
-                "${workspaceFolder}/**",
-                "~/oop-project/**"
->>>>>>> a07adae8945659529c39fb57a0c49c82112e408f
+                "/home/joannesuu/oop-project/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
             "cStandard": "c17",
-<<<<<<< HEAD
             "cppStandard": "gnu++17",
-=======
-            "cppStandard": "gnu++14",
->>>>>>> a07adae8945659529c39fb57a0c49c82112e408f
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-x64",
+            "mergeConfigurations": false,
+            "compilerPath": "/usr/bin/gcc",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "${workspaceFolder}/**"
+                ]
+            }
         }
     ],
     "version": 4

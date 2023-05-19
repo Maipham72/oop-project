@@ -1,13 +1,18 @@
-#include "PaymentTest.cpp"
-#include "DrinksTest.cpp"
 #include "CartTest.cpp"
-int main() {
-  PaymentTest paymentTest;
-  paymentTest.runTests();
+#include "CardPaymentTest.cpp"
+#include "CashPaymentTest.cpp"
+#include "DrinksTest.cpp"
 
+int main() {
+  CashPaymentTest cashPaymentTest;
+  cashPaymentTest.runTests();
+
+  CardPaymentTest cardPaymentTest;
+  cardPaymentTest.runTests();
+  
   DrinksTest drinkTest;
   drinkTest.runDrinksTest();
-  
+
   CartTest cartTest;
   cartTest.runCartTest();
 }
