@@ -3,9 +3,11 @@
 
 #include "BubbleTeaChoice.cpp"
 #include "Cart.h"
+#include "Coffee.h"
 #include "Customer.h"
 #include "Menu.cpp"
 #include "Pizza.h"
+#include "PizzaChoice.cpp"
 #include "cardPayment.h"
 #include "cashPayment.h"
 #include "printArt.cpp"
@@ -85,6 +87,10 @@ int main() {
   if (choice == 4) {
     Coffee coffees = coffeeChoice();
     cust1->addCart(coffees);
+  }
+
+  if (choice == 4) {
+    Coffee c;
   }
   bool paid = 0;
   cout << "Would you like to proceed to payment? \n"
