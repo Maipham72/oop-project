@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
+
 #include "BubbleTea.h"
+#include "Burger.h"
 #include "Cart.h"
 #include "Coffee.h"
-#include "Burger.h"
 #include "Customer.h"
 #include "Menu.cpp"
 #include "Pizza.h"
@@ -120,7 +121,18 @@ int main(void) {
     cash1.pay(payment_Amount);
 
   } else if (typeOfPayment == 2) {
-    CardPayment card1(cust1->getTotal());
+    float payment_Amount = 0;
+    CardPayment card1(30, cust1->getTotal());
+    cout << "How much would you like to pay? " << endl;
+    cin >> payment_Amount;
+
+    // If negative amount if entered
+    while (payment_Amount < 0) {
+      cout << "Error, please try again" << endl;
+      cin >> payment_Amount;
+    }
+
+    card1.pay(payment_Amount);
   }
 
   return 0;

@@ -16,7 +16,9 @@ class CardPayment : public Payment {
       // Reduce card balance by the payment total
       this->cardBalance -= get_amount();
       std::cout << "Your balance is " << this->cardBalance << std::endl;
-      std::cout << "Please collect the balance  " << this->cardBalance << std::endl;
+      std::cout
+          << "Please collect the balance from the counter by exchanging card "
+          << std::endl;
     } else {
       std::cout << "Payment not sucessful, insufficient balance" << std::endl;
     }
@@ -25,21 +27,25 @@ class CardPayment : public Payment {
  public:
   // Default constructor
   CardPayment() : Payment() { cardBalance = 30; }
-  /*Initialises a card payment object with a balance of 30 and the amount of the
+  /*Initialises a card payment object with a balance and the amount of the
    * payment*/
-  CardPayment(float amount) {
-    this->cardBalance = 30;
+  CardPayment(float balance, float amount) {
+    this->cardBalance = balance;
     this->amount = amount;
   }
 
   // Function for the customer to pay
   bool pay(float payment_amount) {
     bool paid = 0;
-    if (paid == 0){
-      ProcessCard(false);
-    }else{
-      ProcessCard(true);
+    //If customer's card has enough balance 
+    if (paid == 0) {
+      if (this->cardBalance >= payment_amount) {
+        ProcessCard(false);
+      } else {
+        ProcessCard(true);
+      }
     }
   }
 };
+
 #endif
