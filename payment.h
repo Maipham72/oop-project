@@ -2,6 +2,8 @@
 #ifndef PAYMENT_H
 #define PAYMENT_H
 #include "Customer.h"
+
+//Abstract class
 class Payment {
  protected:
   float amount;
@@ -18,6 +20,6 @@ class Payment {
   float get_amount() { return this->amount; }
 
   // pure virtual function to be overridded
-  virtual bool pay(float amount) = 0;
+  virtual bool pay(float payment_amount) = 0;
 };
 #endif

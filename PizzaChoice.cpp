@@ -1,6 +1,6 @@
 #include <iostream>
-
 #include "Pizza.h"
+
 Pizza PizzaChoice() {
   Pizza pizza("Pepperoni");
   cout << "What topping do you want?\n"

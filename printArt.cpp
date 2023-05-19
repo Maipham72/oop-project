@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-using namespace std;
 #include <fstream>
 
 void printArt(string fileName) {
@@ -9,7 +8,7 @@ void printArt(string fileName) {
   inFile.open("mj.txt");
   {
     while(getline(inFile,line)) {
-      cout << line << endl;
+      std::cout << line << std::endl;
     }
   }
   inFile.close();

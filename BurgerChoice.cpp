@@ -16,24 +16,24 @@ Burger BurgerChoice() {
   cin >> meatType;
 
   if (bunType == 1 && meatType == 1) {
-    cout << "You have made a plain chicken burger. Happy eating!" << endl;
     burger.setBunType("plain");
     burger.setMeatType("chicken");
+    burger.print();
     return burger;
   } else if (bunType == 1 && meatType == 2) {
-    cout << "You have made a plain beef burger. Happy eating!" << endl;
     burger.setBunType("plain");
     burger.setMeatType("beef");
+    burger.print();
     return burger;
   } else if (bunType == 2 && meatType == 1) {
-    cout << "You have made a potato chicken burger. Happy eating!" << endl;
     burger.setBunType("potato");
     burger.setMeatType("chicken");
+    burger.print();
     return burger;
   } else if (bunType == 2 && meatType == 2) {
-    cout << "You have made a potato beef burger. Happy eating!" << endl;
     burger.setBunType("potato");
     burger.setMeatType("beef");
+    burger.print();
     return burger;
   } else {
     cout << "Invalid. Make another burger" << endl;

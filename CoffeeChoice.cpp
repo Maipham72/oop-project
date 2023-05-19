@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Coffee.h"
 
 // enum Shot {
@@ -10,8 +11,8 @@
 Coffee coffeeChoice() {
   Coffee coffee(0);
 
-  cout << "You have selected coffee. How many shots do you want?" << 
-          "[0] decaf    [1] single     [2] double" << endl;
+  cout << "You have selected coffee. How many shots do you want?"
+       << "[0] decaf    [1] single     [2] double" << endl;
   int shots;
   cin >> shots;
 
@@ -31,3 +32,4 @@ Coffee coffeeChoice() {
     cout << "Invalid. Make another coffee" << endl;
   }
   return coffee;
+}

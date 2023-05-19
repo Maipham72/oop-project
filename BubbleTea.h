@@ -30,7 +30,7 @@ class BubbleTea : public Drinks {
     std::cout << this->names << "is " << this->price
               << "dollars and has an ice level of " << this->getIceLevel()
               << " , sugar level of " << this->getSugarLevel()
-              << " and its tea type is " << this->teaType << std::endl;
+              << " and its tea type is " << this->teaType << ". Happy drinking!" << std::endl;
   }
 };
 

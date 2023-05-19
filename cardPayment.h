@@ -33,7 +33,7 @@ class CardPayment : public Payment {
   }
 
 //Function for the customer to pay
-  bool pay(float amount) {
+  bool pay(float payment_amount) {
 
     if (amount <= cardBalance) {
       ProcessCard(1);

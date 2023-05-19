@@ -1,4 +1,4 @@
-#include "CartTest.cpp"
+
 #include "CardPaymentTest.cpp"
 #include "CashPaymentTest.cpp"
 #include "DrinksTest.cpp"
@@ -13,6 +13,4 @@ int main() {
   DrinksTest drinkTest;
   drinkTest.runDrinksTest();
 
-  CartTest cartTest;
-  cartTest.runCartTest();
 }

@@ -32,8 +32,8 @@ class Burger : public MenuItem {
   // Print function that overrides the one in the menuItem class
   void print() {
     std::cout << this->names << "is " << this->price
-              << "dollars and its bun type is " << this->bunType
-              << " , and meat type of of " << this->meatType;
+              << " dollars and its bun type is " << this->bunType
+              << " , and meat type of of " << this->meatType << ". Happy eating!" << endl;
   }
 };
 

@@ -1,7 +1,8 @@
 #include <iostream>
-#include "Coffee.h"
+
 #include "BubbleTea.h"
 #include "Cart.h"
+#include "Coffee.h"
 #include "MenuItem.h"
 #include "Pizza.h"
 
@@ -10,6 +11,7 @@ class CartTest {
   void runCartTest() {
     testAddOneMenuItem();
     testAddTwoMenuItems();
+    testAddZeroMenuItems();
   }
 
  private:
@@ -65,11 +67,20 @@ class CartTest {
 
         Coffee coffee(50);
         cart.addItem(coffee);
-        //Total price should be 10 + 6.5 = 16.5
-        if (cart.getTotal() != 16.5){
-            cout << "Coffee was not added, test 4 failed!" << endl;
+        // Total price should be 10 + 6.5 = 16.5
+        if (cart.getTotal() != 16.5) {
+          cout << "Coffee was not added, test 4 failed!" << endl;
         }
       }
+    }
+  }
+
+  void testAddZeroMenuItems() {
+    //Test 5
+    {
+      MenuItem menuItem();
+      Cart cart;
+      cart.addItem(menuItem);
     }
   }
 };

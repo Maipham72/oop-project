@@ -8,6 +8,7 @@ class CashPaymentTest {
  public:
   void runTests() {
     testCashPayment();
+    testNegativeValues();
   }
 
  private:
@@ -43,7 +44,12 @@ class CashPaymentTest {
       }
     }
   }
+  void testNegativeValues() {
+    {
+      float amount = 10;
+      cashPayment *cash_payment = new cashPayment(amount);
 
- 
+      cash_payment->pay(-15);
+    }
+  }
 };
-
