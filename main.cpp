@@ -1,21 +1,23 @@
 #include <iostream>
 #include <string>
-
-#include "BubbleTeaChoice.cpp"
-#include "BurgerChoice.cpp"
+#include "BubbleTea.h"
 #include "Cart.h"
 #include "Coffee.h"
-#include "CoffeeChoice.cpp"
+#include "Burger.h"
 #include "Customer.h"
 #include "Menu.cpp"
 #include "Pizza.h"
-#include "PizzaChoice.cpp"
 #include "Store.h"
 #include "cardPayment.h"
 #include "cashPayment.h"
 #include "printArt.cpp"
 
 using namespace std;
+
+BubbleTea BubbleTeaChoice();
+Burger BurgerChoice();
+Pizza PizzaChoice();
+Coffee coffeeChoice();
 
 int main(void) {
   string fileName = "mj.txt";
@@ -92,8 +94,10 @@ int main(void) {
     paymentError = 0;
   }
 
-  while (paymentError == 1) {
+  while (paymentError != 0) {
     cout << "Error, unknown input entered, please try again " << endl;
+    cout << "How would you like to pay? \n"
+         << "Type [1] for Cash, [2] for Card " << endl;
     cin >> typeOfPayment;
     if (typeOfPayment == 1 || typeOfPayment == 2) {
       paymentError = 0;
@@ -117,7 +121,6 @@ int main(void) {
 
   } else if (typeOfPayment == 2) {
     CardPayment card1(cust1->getTotal());
-    
   }
 
   return 0;
