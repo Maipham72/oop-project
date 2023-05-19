@@ -12,7 +12,6 @@
 #include "cashPayment.h"
 #include "printArt.cpp"
 #include "BurgerChoice.cpp"
-#include "PizzaChoice.cpp"
 #include "CoffeeChoice.cpp"
 
 using namespace std;
@@ -85,7 +84,7 @@ int main() {
   }
 
   if (choice == 4) {
-    Coffee coffees = coffeeChoice();
+    Coffee coffees = CoffeeChoice();
     cust1->addCart(coffees);
   }
 
@@ -109,6 +108,7 @@ int main() {
   cout << "How much would you like to pay?" << endl;
   float amountPaid;
   cin >> amountPaid;
+
   if (amountPaid == cust1->getTotal()) {
     c1.ProcessCash(1);
   } else {

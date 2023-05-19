@@ -51,13 +51,17 @@ BubbleTea BubbleTeaChoice() {
     cin >> iceLevel;
     if (iceLevel == 2) {
       bubbleTea.setIceLevel(50);
+      bubbleTea.print();
       break;
     } else if (iceLevel == 3) {
       bubbleTea.setIceLevel(25);
+      bubbleTea.print();
       break;
     } else if (iceLevel == 1) {
+      bubbleTea.print();
       break;
     } else {
+      bubbleTea.print();
       cout << "Error occured. Please try again" << endl;
     }
   }

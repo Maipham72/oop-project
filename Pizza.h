@@ -29,7 +29,6 @@ class Pizza : public MenuItem {
               << " dollars and its topping is " << this->topping << std::endl;
   }
 
-  void printPizzaChoice();
 };
 
 #endif

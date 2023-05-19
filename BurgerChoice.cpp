@@ -3,16 +3,16 @@
 
 Burger BurgerChoice() {
   Burger burger("chicken","plain");
-  cout << "You have selected pizza, what bun type do you want to choose? \n" <<
+  cout << "You have selected burger, what bun type do you want to choose? \n" <<
           "[1] Plain    [2] Potato" << endl;
   
-  int bunType;
+  int bunType = 0;
   cin >> bunType;
 
   cout << "What meat do you want? \n" <<
           "[1] Chicken  [2] Beef" << endl;
 
-  int meatType;
+  int meatType = 0;
   cin >> meatType;
 
   if (bunType == 1 && meatType == 1) {
