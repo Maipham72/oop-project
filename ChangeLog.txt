@@ -9,3 +9,4 @@ New Functions
 Certain functions which were listed in the UML Diagram were 
 removed
 Removed Functions
+- 

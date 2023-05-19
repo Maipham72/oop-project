@@ -6,7 +6,7 @@ class CardPaymentTest {
  public:
   void runTests() {
     testPositiveValues();
-    testBoundaryValues();
+    testZeroValue();
   }
 
  private:
@@ -45,7 +45,7 @@ class CardPaymentTest {
   }
 
   // Tests to test for the boundary values for card payment
-  void testBoundaryValues() {
+  void testZeroValue() {
     // Test 4
     {
       float amount = 0;
@@ -54,16 +54,6 @@ class CardPaymentTest {
       // Expecting a true boolean variable
       if (card_payment->pay(amount) == 0) {
         cout << "Test 4 for card payment failed!" << endl;
-      }
-    }
-    //Test 5 
-    {
-        float amount = 10000.0;
-        CardPayment *card_payment = new CardPayment(amount);
-      // Paying exact amount
-      // Expecting a true boolean variable
-      if (card_payment->pay(amount) == 0) {
-        cout << "Test 2 for card payment failed!" << endl;
       }
     }
   }

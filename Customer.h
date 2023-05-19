@@ -33,5 +33,8 @@ class Customer {
 
   // Get customer's order ID
   int getOrderID() { return this->orderID; }
+
+  // Destructor
+  ~Customer() { delete[] customerCart; }
 };
 #endif
