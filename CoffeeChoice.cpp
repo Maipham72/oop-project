@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Coffee.h"
 
 // enum Shot {

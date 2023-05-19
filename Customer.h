@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <string>
 #include "Cart.h"
 #include "MenuItem.h"
 
@@ -17,7 +17,7 @@ class Customer {
 
   // A constructor that takes in an orderID and assigns it to the customer
   // And creates a new cart for the customer
-  Customer(int orderID) : orderID(orderID) { customerCart = new Cart(); }
+  Customer(std::string name,int orderID) : orderID(orderID) { customerCart = new Cart(); }
 
   // Allows customer to view cart
   void viewCart() { this->customerCart->getCartItem(); }

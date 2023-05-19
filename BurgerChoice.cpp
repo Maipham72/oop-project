@@ -15,6 +15,8 @@ Burger BurgerChoice() {
   int meatType = 0;
   cin >> meatType;
 
+  system("clear");
+
   if (bunType == 1 && meatType == 1) {
     burger.setBunType("plain");
     burger.setMeatType("chicken");

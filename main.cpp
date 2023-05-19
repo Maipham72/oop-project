@@ -21,10 +21,15 @@ int main(void) {
   string fileName = "mj.txt";
   printArt(fileName);
 
+  cout << endl;
+  std::string name;
   Customer *cust1 = new Customer();
 
-  cout << "Welcome to MJ Diner! \n"
-       << "Type [1] to see the menu: " << endl;
+  cout << "What is your name? " << endl;
+  cin >> name; 
+  cout << "Welcome" << name << "to MJ Diner! \n" << endl;
+  
+  cout << "Type [1] to see the menu: " << endl;
   int menu;
   cin >> menu;
   cout << endl;
@@ -33,40 +38,79 @@ int main(void) {
     printMenu();
   }
 
-  int choice;
-  std::cout << "What do you want to order? " << endl;
-  cin >> choice;
-
   int ordering; 
+  int choice;
+  bool order = true;
+  while (order != false) {
+    std::cout << "What do you want to order? " << endl;
+    cin >> choice;
 
-  while (choice != 1 || choice != 2 || choice != 3 || choice != 4) {
-    if (choice == 1) {
-      Pizza pizzas = PizzaChoice();
-      cust1->addCart(pizzas);
-      cout << "Do you want to continue odering? \n" <<
-              "[1] Yes    [2] No" << endl;
-      cin >> ordering;
-      if (ordering == 1)
+      while (choice != 1 || choice != 2 || choice != 3 || choice != 4) {
+        if (choice == 1) {
+          Pizza pizzas = PizzaChoice();
+          cust1->addCart(pizzas);
+          cout << "Do you want to continue odering? \n" <<
+                  "[1] Yes    [2] No" << endl;
+          cin >> ordering;
+          system ("clear");
+          if (ordering == 1) {
+            printMenu();
+            order = true;
+          } else {
+            order = false;
+            break;
+          }
 
-    }
+        }
 
-    if (choice == 2) {
-      Burger burgers = BurgerChoice();
-      cust1->addCart(burgers);
-      break;
-    }
+        if (choice == 2) {
+          Burger burgers = BurgerChoice();
+          cust1->addCart(burgers);
+          cout << "Do you want to continue odering? \n" <<
+                  "[1] Yes    [2] No" << endl;
+          cin >> ordering;
+          system ("clear");
+          if (ordering == 1) {
+            printMenu();
+            order = true;
+          } else {
+            order = false;
+            break;
+          }
+        }
 
-    if (choice == 3) {
-      BubbleTea teas = BubbleTeaChoice();
-      cust1->addCart(teas);
-      break;
-    }
+        if (choice == 3) {
+          BubbleTea teas = BubbleTeaChoice();
+          cust1->addCart(teas);
+          cout << "Do you want to continue odering? \n" <<
+                  "[1] Yes    [2] No" << endl;
+          cin >> ordering;
+          system ("clear");
+          if (ordering == 1) {
+            printMenu();
+            order = true;
+          } else {
+            order = false;
+            break;
+          }
+        }
 
-    if (choice == 4) {
-      Coffee coffees = coffeeChoice();
-      cust1->addCart(coffees);
-      break;
-    }
+        if (choice == 4) {
+          Coffee coffees = coffeeChoice();
+          cust1->addCart(coffees);
+          cout << "Do you want to continue odering? \n" <<
+                  "[1] Yes    [2] No" << endl;
+          cin >> ordering;
+          system ("clear");
+          if (ordering == 1) {
+            printMenu();
+            order = true;
+          } else {
+            order = false;
+            break;
+          }
+        }
+      }
   }
 
   bool paid = 0;
