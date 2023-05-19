@@ -16,6 +16,7 @@ class CardPayment : public Payment {
       // Reduce card balance by the payment total
       this->cardBalance -= get_amount();
       std::cout << "Your balance is " << this->cardBalance << std::endl;
+      std::cout << "Please collect the balance  " << this->cardBalance << std::endl;
     } else {
       std::cout << "Payment not sucessful, insufficient balance" << std::endl;
     }
@@ -33,7 +34,12 @@ class CardPayment : public Payment {
 
   // Function for the customer to pay
   bool pay(float payment_amount) {
-    
+    bool paid = 0;
+    if (paid == 0){
+      ProcessCard(false);
+    }else{
+      ProcessCard(true);
+    }
   }
 };
 #endif

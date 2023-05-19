@@ -54,7 +54,7 @@ BubbleTea BubbleTeaChoice() {
        << endl;
   int iceLevel = 0;
 
-  while (iceLevel != 1 && iceLevel != 2 && iceLevel != 3) {
+  while (iceLevel != 1 &&  iceLevel != 2 && iceLevel != 3) {
     cin >> iceLevel;
     if (iceLevel == 2) {
       bubbleTea.setIceLevel(50);
