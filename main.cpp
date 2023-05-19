@@ -10,9 +10,9 @@
 #include "Menu.cpp"
 #include "Pizza.h"
 #include "PizzaChoice.cpp"
+#include "Store.h"
 #include "cardPayment.h"
 #include "cashPayment.h"
-#include "Store.h"
 #include "printArt.cpp"
 
 using namespace std;
@@ -33,21 +33,19 @@ int main(void) {
     printMenu();
   }
 
-  int choice;
+  int choice = 0;
   std::cout << "What do you want to order? " << endl;
   cin >> choice;
 
-  int ordering; 
+  int ordering = 0;
 
-  while (choice != 1 || choice != 2 || choice != 3 || choice != 4) {
+  while (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
     if (choice == 1) {
       Pizza pizzas = PizzaChoice();
       cust1->addCart(pizzas);
-      cout << "Do you want to continue odering? \n" <<
-              "[1] Yes    [2] No" << endl;
+      cout << "Do you want to continue ordering? \n"
+           << "[1] Yes    [2] No" << endl;
       cin >> ordering;
-      if (ordering == 1)
-
     }
 
     if (choice == 2) {
@@ -68,11 +66,9 @@ int main(void) {
       break;
     }
   }
-
   bool paid = 0;
   cout << "Would you like to proceed to payment? \n"
        << "Type [1] for Yes, [2] for No" << endl;
-      
 
   int payment_now = 0;
   cin >> payment_now;
@@ -81,17 +77,32 @@ int main(void) {
 
   int typeOfPayment = 0;
   if (payment_now == 1) {
+    // Display items in cart and total
     cust1->viewCart();
     cout << "Your total is: " << cust1->getTotal() << endl;
+
     cout << "How would you like to pay? \n"
          << "Type [1] for Cash, [2] for Card " << endl;
 
     cin >> typeOfPayment;
   }
-  float payment_Amount = 0;
-  cashPayment c1(cust1->getTotal());
+
+  bool paymentError = 1;
+  if (typeOfPayment == 1 || typeOfPayment == 2) {
+    paymentError = 0;
+  }
+
+  while (paymentError == 1) {
+    cout << "Error, unknown input entered, please try again " << endl;
+    cin >> typeOfPayment;
+    if (typeOfPayment == 1 || typeOfPayment == 2) {
+      paymentError = 0;
+    }
+  }
+
   if (typeOfPayment == 1) {
-    bool done = 0;
+    float payment_Amount = 0;
+    cashPayment cash1(cust1->getTotal());
     cout << "How much would you like to pay? " << endl;
 
     cin >> payment_Amount;
@@ -101,11 +112,13 @@ int main(void) {
       cout << "Error, please try again" << endl;
       cin >> payment_Amount;
     }
-  }
-  
-  
 
-  c1.pay(payment_Amount);
+    cash1.pay(payment_Amount);
+
+  } else if (typeOfPayment == 2) {
+    CardPayment card1(cust1->getTotal());
+    
+  }
 
   return 0;
 }
