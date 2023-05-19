@@ -16,29 +16,32 @@ Burger BurgerChoice() {
   cin >> meatType;
 
   system("clear");
+  bool options = true;
 
-  if (bunType == 1 && meatType == 1) {
-    burger.setBunType("plain");
-    burger.setMeatType("chicken");
-    burger.print();
-    return burger;
-  } else if (bunType == 1 && meatType == 2) {
-    burger.setBunType("plain");
-    burger.setMeatType("beef");
-    burger.print();
-    return burger;
-  } else if (bunType == 2 && meatType == 1) {
-    burger.setBunType("potato");
-    burger.setMeatType("chicken");
-    burger.print();
-    return burger;
-  } else if (bunType == 2 && meatType == 2) {
-    burger.setBunType("potato");
-    burger.setMeatType("beef");
-    burger.print();
-    return burger;
-  } else {
-    cout << "Invalid. Make another burger" << endl;
+  while (options != false) {
+    if (bunType == 1 && meatType == 1) {
+      burger.setBunType("plain");
+      burger.setMeatType("chicken");
+      burger.print();
+      return burger; 
+    } else if (bunType == 1 && meatType == 2) {
+      burger.setBunType("plain");
+      burger.setMeatType("beef");
+      burger.print();
+      return burger;
+    } else if (bunType == 2 && meatType == 1) {
+      burger.setBunType("potato");
+      burger.setMeatType("chicken");
+      burger.print();
+      return burger;
+    } else if (bunType == 2 && meatType == 2) {
+      burger.setBunType("potato");
+      burger.setMeatType("beef");
+      burger.print();
+      return burger;
+    } else {
+      cout << "Invalid. Make another burger" << endl;
+    }
   }
   return burger;
 
