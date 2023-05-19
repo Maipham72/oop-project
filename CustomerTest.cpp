@@ -6,9 +6,5 @@ class CustomerTest{
 
     );
     private:
-    void getOrderIDTest(){
-        {
-            
-        }
-    }
+    
 };

@@ -1,4 +1,5 @@
 #include <string>
+
 #include "Drinks.h"
 #ifndef COFFEE_H
 #define COFFEE_H
@@ -22,14 +23,13 @@ class Coffee : public Drinks {
   }
 
   // Returns the caffeine level
-  int getCaffeineLevel()  { return caffeineLevel; }
+  int getCaffeineLevel() { return caffeineLevel; }
 
   // Prints the name, price, ice, sugar and caffeine level of the coffee object
   void print() {
     std::cout << this->names << " is " << this->price
               << " dollars and has an ice level of " << this->getIceLevel()
-              << " , sugar level of " << this->getSugarLevel()
-              << " and a caffeine level of" << this->caffeineLevel << std::endl;
+              << " , sugar level of " << this->getSugarLevel() << std::endl;
   }
 };
 

@@ -5,9 +5,18 @@
 #define CASHPAYMENT_H
 
 class cashPayment : public Payment {
- protected:
+ private:
   bool paid;
   float change;
+  /*Prints out a message whenever payment is successful*/
+  void ProcessCash(bool paid) {
+    if (paid == 1) {
+      std::cout << "Payment successful, change of " << this->change
+                << " will be given" << std::endl;
+    } else {
+      std::cout << "Payment not successful, insufficient balance" << std::endl;
+    }
+  }
 
  public:
   // Default constructor
@@ -20,24 +29,15 @@ class cashPayment : public Payment {
     this->paid = 0;
   }
 
-  /*Prints out a message whenever payment is successful*/
-  void ProcessCash(bool paid) {
-    if (paid == 1) {
-      std::cout << "Payment successful, change of " << this->change << " will be given" << std::endl;
-    } else {
-      std::cout << "Payment not successful, insufficient balance" << std::endl;
-    }
-  }
-
   // Function to pay
   bool pay(float payment_amount) {
     if (payment_amount >= this->amount) {
       this->change = payment_amount - this->amount;
-      paid = 1;
+      this->paid = 1;
       ProcessCash(true);
       return 1;
     } else {
-      paid = 0;
+      this->paid = 0;
       ProcessCash(false);
       return 0;
     }
