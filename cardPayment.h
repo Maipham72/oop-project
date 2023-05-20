@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "payment.h"
 #ifndef CARDPAYMENT_H
 #define CARDPAYMENT_H
@@ -36,13 +37,13 @@ class CardPayment : public Payment {
   // Function for the customer to pay
   bool pay(float payment_amount) {
     bool paid = 0;
-    //If customer's card has enough balance 
-    if (paid == 0) {
-      if (this->cardBalance >= payment_amount) {
-        ProcessCard(false);
-      } else {
-        ProcessCard(true);
-      }
+    // If customer's card has enough balance
+    if (this->cardBalance >= payment_amount) {
+      ProcessCard(true);
+      paid = 1;
+    } else {
+      ProcessCard(false);
+      paid = 0;
     }
     return paid;
   }

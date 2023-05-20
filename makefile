@@ -1,5 +1,5 @@
-test: tests.cpp CardPaymentTest.cpp DrinksTest.cpp CashPaymentTest.cpp
-	g++ -std=c++11 -Wall -Wextra -o test tests.cpp CardPaymentTest.cpp DrinksTest.cpp CashPaymentTest.cpp
+test: tests.cpp cardPaymentTest.cpp DrinksTest.cpp cashPaymentTest.cpp MenuItemTest.cpp
+	g++ -std=c++11 -Wall -Wextra -o test tests.cpp cardPaymentTest.cpp DrinksTest.cpp cashPaymentTest.cpp MenuItemTest.cpp
 
-main: main.cpp BubbleTeaChoice.cpp CoffeeChoice.cpp BurgerChoice.cpp PizzaChoice.cpp
-	g++ -std=c++11 -Wall -Wextra -o main main.cpp BubbleTeaChoice.cpp CoffeeChoice.cpp BurgerChoice.cpp PizzaChoice.cpp
+main: main.cpp 
+	g++ -std=c++11 -Wall -Wextra -o main main.cpp 
