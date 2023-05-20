@@ -10,13 +10,13 @@
 Coffee coffeeChoice() {
   Coffee coffee(0);
 
-  cout << "You have selected coffee. How many shots do you want?"
+  cout << "You have selected coffee. How many shots do you want? \n"
        << "[0] decaf    [1] single     [2] double" << endl;
   int shots;
   cin >> shots;
   while (!(shots <= 2 && shots >= 0)) {
     cout << "Invalid output entered, please try again" << endl
-         << "You have selected coffee. How many shots do you want?"
+         << "You have selected coffee. How many shots do you want? \n"
          << "[0] decaf    [1] single     [2] double" << endl;
     cin >> shots;
   }
@@ -36,7 +36,7 @@ Coffee coffeeChoice() {
     cout << "Invalid. Make another coffee" << endl;
   }
 
-  cout << "What is your preferred sugar level "
+  cout << "What is your preferred sugar level \n "
           "Press [1] 100 (with sugar), [2] 0 (no sugar)"
        << endl;
   int sugarLevel = 0;
@@ -49,14 +49,14 @@ Coffee coffeeChoice() {
     } else if (sugarLevel == 1) {
       break;
     } else {
-      cout << "Error occured. Please try again" << endl
-           << "What is your preferred sugar level "
+      cout << "Error occured. Please try again \n" << endl
+           << "What is your preferred sugar level \n "
               "Press [1] 100 (with sugar), [2] 0 (no sugar)"
            << endl;
     }
   }
 
-  cout << "What is your preferred ice level "
+  cout << "What is your preferred ice level \n "
           "Press [1] 100, [2] 50 [3] 25"
        << endl;
   int iceLevel = 0;
@@ -76,8 +76,8 @@ Coffee coffeeChoice() {
       break;
     } else {
       coffee.print();
-      cout << "Error occured. Please try again" << endl
-           << "What is your preferred ice level "
+      cout << "Error occured. Please try again \n" << endl
+           << "What is your preferred ice level \n "
               "Press [1] 100, [2] 50 [3] 25"
            << endl;
     }

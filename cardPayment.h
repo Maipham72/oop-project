@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "payment.h"
 #ifndef CARDPAYMENT_H
 #define CARDPAYMENT_H
@@ -45,6 +44,7 @@ class CardPayment : public Payment {
         ProcessCard(true);
       }
     }
+    return paid;
   }
 };
 

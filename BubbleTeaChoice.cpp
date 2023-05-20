@@ -5,7 +5,7 @@
 BubbleTea BubbleTeaChoice() {
   // Bubble Tea initialised to Black Tea by default
   BubbleTea bubbleTea("Black");
-  cout << "You have selected Bubble Tea. What kind of tea do you want with it? "
+  cout << "You have selected Bubble Tea. What kind of tea do you want with it? \n "
           "Press [1] for Black, [2] for Green"
        << endl;
   int tea = 0;
@@ -21,13 +21,13 @@ BubbleTea BubbleTeaChoice() {
     } else {
       cout << "Error occurred, please try again" << endl
            << "You have selected Bubble Tea. What kind of tea do you want with "
-              "it? "
+              "it? \n"
               "Press [1] for Black, [2] for Green"
            << endl;
     }
   }
 
-  cout << "What is your preferred sugar level "
+  cout << "What is your preferred sugar level \n"
           "Press [1] 100, [2] 50 [3] 25"
        << endl;
   int sugarLevel = 0;
@@ -43,13 +43,13 @@ BubbleTea BubbleTeaChoice() {
       break;
     } else {
       cout << "Error occured. Please try again" << endl
-           << "What is your preferred sugar level "
+           << "What is your preferred sugar level \n"
               "Press [1] 100, [2] 50 [3] 25"
            << endl;
     }
   }
 
-  cout << "What is your preferred ice level "
+  cout << "What is your preferred ice level \n " <<
           "Press [1] 100, [2] 50 [3] 25"
        << endl;
   int iceLevel = 0;
@@ -70,7 +70,7 @@ BubbleTea BubbleTeaChoice() {
     } else {
       bubbleTea.print();
       cout << "Error occured. Please try again" << endl
-           << "What is your preferred ice level "
+           << "What is your preferred ice level \n"
               "Press [1] 100, [2] 50 [3] 25"
            << endl;
     }

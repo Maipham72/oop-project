@@ -29,7 +29,7 @@ class Coffee : public Drinks {
   void print() {
     std::cout << this->names << " is " << this->price
               << " dollars and has an ice level of " << this->getIceLevel()
-              << " , sugar level of " << this->getSugarLevel() << std::endl;
+              << " ,sugar level of " << this->getSugarLevel() << std::endl;
   }
 };
 

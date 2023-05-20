@@ -26,7 +26,7 @@ class Pizza : public MenuItem {
     // Print function that overrides the one in the menuItem class
   void print() {
     std::cout << this->names << " is " << this->price
-              << " dollars and its topping is " << this->topping << ". Happy eating" << std::endl;
+              << " dollars and its topping is " << this->topping << ". Happy eating!" << std::endl;
   }
 
 };

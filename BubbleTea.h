@@ -27,9 +27,9 @@ class BubbleTea : public Drinks {
 
   // Print function
   void print() {
-    std::cout << this->names << "is " << this->price
-              << "dollars and has an ice level of " << this->getIceLevel()
-              << " , sugar level of " << this->getSugarLevel()
+    std::cout << this->names << " is " << this->price
+              << " dollars and has an ice level of " << this->getIceLevel()
+              << " ,sugar level of " << this->getSugarLevel()
               << " and its tea type is " << this->teaType << ". Happy drinking!" << std::endl;
   }
 };
