@@ -56,7 +56,7 @@ int main(void) {
   int ordering; 
   int choice;
   bool order = true;
-  while (order != false) {
+  while (order != false || payment != true) {
     std::cout << "What do you want to order? " << endl;
     cin >> choice;
 
@@ -182,47 +182,46 @@ int main(void) {
     paymentError = 0;
   }
 
+    
     while (paymentError != 0) {
       cout << "Error, unknown input entered, please try again " << endl;
       cout << "How would you like to pay? \n"
           << "Type [1] for Cash, [2] for Card " << endl;
       cin >> typeOfPayment;
-      if (typeOfPayment == 1 || typeOfPayment == 2) {
-        paymentError = 0;
+
+      if (typeOfPayment == 1) {
+        float payment_Amount = 0;
+        cashPayment cash1(cust1->getTotal());
+        cust1->viewCart();
+        cout << "Your total is: " << cust1->getTotal() << endl;
+        cout << "How much would you like to pay? " << endl;
+
+        cin >> payment_Amount;
+
+        // If negative amount if entered
+        while (payment_Amount < 0) {
+          cout << "Error, please try again" << endl;
+          cin >> payment_Amount;
+        }
+
+        cash1.pay(payment_Amount);
+
+      } else if (typeOfPayment == 2) {
+        float payment_Amount = 0;
+        CardPayment card1(30, cust1->getTotal());
+        cout << "How much would you like to pay? " << endl;
+        cin >> payment_Amount;
+
+        // If negative amount if entered
+        while (payment_Amount < 0) {
+          cout << "Error, please try again" << endl;
+          cin >> payment_Amount;
+        }
+
+        card1.pay(payment_Amount);
       }
     }
 
-    if (typeOfPayment == 1) {
-      float payment_Amount = 0;
-      cashPayment cash1(cust1->getTotal());
-      cust1->viewCart();
-      cout << "Your total is: " << cust1->getTotal() << endl;
-      cout << "How much would you like to pay? " << endl;
-
-      cin >> payment_Amount;
-
-      // If negative amount if entered
-      while (payment_Amount < 0) {
-        cout << "Error, please try again" << endl;
-        cin >> payment_Amount;
-      }
-
-      cash1.pay(payment_Amount);
-
-    } else if (typeOfPayment == 2) {
-      float payment_Amount = 0;
-      CardPayment card1(30, cust1->getTotal());
-      cout << "How much would you like to pay? " << endl;
-      cin >> payment_Amount;
-
-      // If negative amount if entered
-      while (payment_Amount < 0) {
-        cout << "Error, please try again" << endl;
-        cin >> payment_Amount;
-      }
-
-      card1.pay(payment_Amount);
-    }
   
   return 0;
 }
