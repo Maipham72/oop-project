@@ -3,9 +3,10 @@
 #include "BubbleTea.h"
 
 BubbleTea BubbleTeaChoice() {
+  system("clear");
   // Bubble Tea initialised to Black Tea by default
   BubbleTea bubbleTea("Black");
-  cout << "You have selected Bubble Tea. What kind of tea do you want with it? \n "
+  cout << "You have selected Bubble Tea. What kind of tea do you want with it? \n"
           "Press [1] for Black, [2] for Green"
        << endl;
   int tea = 0;
@@ -27,6 +28,7 @@ BubbleTea BubbleTeaChoice() {
     }
   }
 
+  cout << endl;
   cout << "What is your preferred sugar level \n"
           "Press [1] 100, [2] 50 [3] 25"
        << endl;
@@ -49,7 +51,8 @@ BubbleTea BubbleTeaChoice() {
     }
   }
 
-  cout << "What is your preferred ice level \n " <<
+  cout << endl;
+  cout << "What is your preferred ice level \n" <<
           "Press [1] 100, [2] 50 [3] 25"
        << endl;
   int iceLevel = 0;

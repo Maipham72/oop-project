@@ -1,32 +1,44 @@
 #include <iostream>
-
+#include "valid.cpp"
 #include "Pizza.h"
 
 Pizza PizzaChoice() {
+  system("clear");
   Pizza pizza("Pepperoni");
-  cout << "What topping do you want?\n"
-       << "[1] Pineapple "
-       << " "
-       << "[2] Pepperoni" << endl;
-  int topping_choice = 0;
+  int topping_choice;
+  bool topping = true;
+    do {
+      cout  << "You have selected a pizza. What topping do you want?\n"
+            << "[1] Pineapple "
+            << " "
+            << "[2] Pepperoni" << endl;
+      cin >> topping_choice;
 
-  while (topping_choice != 1 && topping_choice != 2) {
-    cin >> topping_choice;
-    if (topping_choice == 1) {
-      pizza.setTopping("Pineapple");
-      pizza.print();
-      return pizza;
-    } else if (topping_choice == 2) {
-      pizza.setTopping("Pepperoni");
-      pizza.print();
-      return pizza;
-    } else {
-      cout << "Invalid, please try again" << endl
-           << "What topping do you want?\n"
-           << "[1] Pineapple "
-           << " "
-           << "[2] Pepperoni" << endl;
+    if (!(std::cin)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl; 
+      clearInput();
+      continue; 
     }
-  }
-  return pizza;
+    if (!isNumValid(topping_choice)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      continue; 
+    } 
+    
+    while (topping != false) {
+      if (topping_choice == 1) {
+        pizza.setTopping("Pineapple");
+        pizza.print();
+        return pizza;
+      } else if (topping_choice == 2) {
+        pizza.setTopping("Pepperoni");
+        pizza.print();
+        return pizza;
+      }
+    }
+}
+    while (true);
+    std::cin.get();
+    return pizza;
 }

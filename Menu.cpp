@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+#include <limits>
 
 void printMenu() {
     std::cout << "This is our menu: \n"
@@ -16,4 +16,4 @@ void printMenu() {
          << "[4] Coffee"
          << "                         "
          << "$6.5" << std::endl;
-  }
+}

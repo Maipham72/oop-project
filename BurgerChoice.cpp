@@ -1,56 +1,68 @@
 #include <iostream>
-
+#include "valid.cpp"
 #include "Burger.h"
 
 Burger BurgerChoice() {
+  system("clear");
   Burger burger("chicken", "plain");
-  cout << "You have selected burger, what bun type do you want to choose? \n"
-       << "[1] Plain    [2] Potato" << endl;
-
-  int bunType = 0;
-  cin >> bunType;
-  while (bunType != 1 && bunType != 2) {
-    cout << "Invalid input entered, please try again" << endl
-         << "You have selected burger, what bun type do you want to choose? \n"
-         << "[1] Plain    [2] Potato" << endl;
-    cin >> bunType;
-  }
-
-  cout << "What meat do you want? \n"
-       << "[1] Chicken  [2] Beef" << endl;
-
+  int bunType;
   int meatType = 0;
-  cin >> meatType;
+  bool makingBurger = true;
+  do {
+    cout << "You have selected burger, what bun type do you want to choose? \n"
+          << "[1] Plain    [2] Potato" << endl;
+    cin >> bunType;
 
-  while (meatType != 1 && meatType != 2) {
-    cout << "Invalid input entered, please try again" << endl
-         << "What meat do you want? \n"
-         << "[1] Chicken  [2] Beef" << endl;
+    cout << endl;
+
+    cout << "What meat do you want? \n"
+        << "[1] Chicken  [2] Beef" << endl;
     cin >> meatType;
-  }
 
-  if (bunType == 1 && meatType == 1) {
-    burger.setBunType("plain");
-    burger.setMeatType("chicken");
-    burger.print();
-    return burger;
-  } else if (bunType == 1 && meatType == 2) {
-    burger.setBunType("plain");
-    burger.setMeatType("beef");
-    burger.print();
-    return burger;
-  } else if (bunType == 2 && meatType == 1) {
-    burger.setBunType("potato");
-    burger.setMeatType("chicken");
-    burger.print();
-    return burger;
-  } else if (bunType == 2 && meatType == 2) {
-    burger.setBunType("potato");
-    burger.setMeatType("beef");
-    burger.print();
-    return burger;
-  } else {
-    cout << "Invalid. Make another burger" << endl;
-  }
-  return burger;
+    if (!(std::cin)) {
+        system("clear");
+        cout << "Invalid. Try again" << endl; 
+        clearInput();
+        continue; 
+    } 
+
+    if (!isNumValid(bunType)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      continue; 
+    } else {
+      makingBurger = true;
+    }
+
+    if (!isNumValid(meatType)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      continue; 
+    } else {
+      makingBurger = true;
+    }
+
+    while (makingBurger != false) {
+      if (bunType == 1 && meatType == 1) {
+        burger.setBunType("plain");
+        burger.setMeatType("chicken");
+        burger.print();
+        return burger;
+      } else if (bunType == 1 && meatType == 2) {
+        burger.setBunType("plain");
+        burger.setMeatType("beef");
+        burger.print();
+        return burger;
+      } else if (bunType == 2 && meatType == 1) {
+        burger.setBunType("potato");
+        burger.setMeatType("chicken");
+        burger.print();
+        return burger;
+      }
+    }
 }
+    while (true);
+    std::cin.get();
+    return burger;
+}
+  
