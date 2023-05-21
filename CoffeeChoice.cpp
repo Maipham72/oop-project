@@ -44,7 +44,7 @@ Coffee coffeeChoice() {
   while (sugarLevel != 1 && sugarLevel != 2) {
     cin >> sugarLevel;
     if (sugarLevel == 2) {
-      coffee.setSugarLevel(50);
+      coffee.setSugarLevel(0);
       break;
     } else if (sugarLevel == 1) {
       break;
