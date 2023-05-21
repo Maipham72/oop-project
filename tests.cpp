@@ -1,6 +1,6 @@
-
-#include "CardPaymentTest.cpp"
-#include "CashPaymentTest.cpp"
+#include "MenuItemTest.cpp"
+#include "cardPaymentTest.cpp"
+#include "cashPaymentTest.cpp"
 #include "DrinksTest.cpp"
 
 int main() {
@@ -12,5 +12,8 @@ int main() {
   
   DrinksTest drinkTest;
   drinkTest.runDrinksTest();
+
+  MenuItemTest menuItemTest;
+  menuItemTest.runMenuItemTest();
 
 }
