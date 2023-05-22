@@ -1,8 +1,9 @@
 #include <iostream>
 
 #include "Burger.h"
-#include "valid.cpp"
 
+bool isNumValid(int data);
+void clearInput() ;
 Burger BurgerChoice() {
   system("clear");
   Burger burger("chicken", "plain");

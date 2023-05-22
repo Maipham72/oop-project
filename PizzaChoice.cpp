@@ -1,8 +1,8 @@
 #include <iostream>
 
 #include "Pizza.h"
-#include "valid.cpp"
-
+bool isNumValid(int data);
+void clearInput() ;
 Pizza PizzaChoice() {
   system("clear");
   Pizza pizza("Pepperoni");

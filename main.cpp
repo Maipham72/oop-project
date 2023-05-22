@@ -6,24 +6,20 @@
 #include <string>
 #include <thread>
 #include "BubbleTea.h"
-#include "BubbleTeaChoice.cpp"
 #include "Burger.h"
-#include "BurgerChoice.cpp"
 #include "Cart.h"
 #include "Coffee.h"
-#include "CoffeeChoice.cpp"
 #include "Customer.h"
 #include "Menu.cpp"
 #include "Pizza.h"
-#include "PizzaChoice.cpp"
 #include "Store.h"
 #include "cardPayment.h"
 #include "cashPayment.h"
 #include "printArt.cpp"
-#include "valid.cpp"
 
 using namespace std;
-
+bool isNumValid(int data);
+void clearInput() ;
 BubbleTea BubbleTeaChoice();
 Burger BurgerChoice();
 Pizza PizzaChoice();

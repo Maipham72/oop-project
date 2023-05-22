@@ -1,5 +1,4 @@
-#ifndef VALID_H
-#define VALID_H
+
 #include <iostream>
 #include <limits>
 #include <string>
@@ -10,4 +9,3 @@ void clearInput() {
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-#endif
