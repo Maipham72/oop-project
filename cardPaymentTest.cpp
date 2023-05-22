@@ -16,7 +16,7 @@ class CardPaymentTest {
     {
       float amount = 11.55;
       float balance = 30.00;
-      CardPayment *card_payment = new CardPayment(balance, amount);
+      CardPayment *card_payment =  new CardPayment(balance, amount);
       // Paying exact amount and enough balance
       // Expecting a true boolean variable
       if (card_payment->pay(amount) == 0) {

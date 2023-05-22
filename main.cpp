@@ -13,7 +13,6 @@
 #include "Customer.h"
 #include "Menu.cpp"
 #include "Pizza.h"
-#include "Store.h"
 #include "cardPayment.h"
 #include "cashPayment.h"
 #include "printArt.cpp"
