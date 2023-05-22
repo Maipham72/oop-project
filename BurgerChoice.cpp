@@ -6,7 +6,7 @@
 Burger BurgerChoice() {
   system("clear");
   Burger burger("chicken", "plain");
-  int bunType;
+  int bunType = 0;
   int meatType = 0;
   bool makingBurger = true;
   do {
