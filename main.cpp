@@ -5,6 +5,7 @@
 #include <limits>
 #include <string>
 #include <thread>
+
 #include "BubbleTea.h"
 #include "Burger.h"
 #include "Cart.h"
@@ -19,7 +20,7 @@
 
 using namespace std;
 bool isNumValid(int data);
-void clearInput() ;
+void clearInput();
 BubbleTea BubbleTeaChoice();
 Burger BurgerChoice();
 Pizza PizzaChoice();
@@ -374,5 +375,7 @@ finish:
     card1.pay(cust1->getTotal());
   }
 
+  // Deallocating memory
+  delete (cust1);
   return 0;
 }

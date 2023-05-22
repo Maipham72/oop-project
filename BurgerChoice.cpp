@@ -3,7 +3,7 @@
 #include "Burger.h"
 
 bool isNumValid(int data);
-void clearInput() ;
+void clearInput();
 Burger BurgerChoice() {
   system("clear");
   Burger burger("chicken", "plain");
@@ -14,6 +14,13 @@ Burger BurgerChoice() {
     cout << "You have selected burger, what bun type do you want to choose? \n"
          << "[1] Plain    [2] Potato" << endl;
     cin >> bunType;
+    if (!isNumValid(bunType)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      continue;
+    } else {
+      makingBurger = true;
+    }
 
     cout << endl;
 
@@ -26,14 +33,6 @@ Burger BurgerChoice() {
       cout << "Invalid. Try again" << endl;
       clearInput();
       continue;
-    }
-
-    if (!isNumValid(bunType)) {
-      system("clear");
-      cout << "Invalid. Try again" << endl;
-      continue;
-    } else {
-      makingBurger = true;
     }
 
     if (!isNumValid(meatType)) {
