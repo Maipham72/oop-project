@@ -54,7 +54,7 @@ class CardPaymentTest {
       CardPayment *card_payment = new CardPayment(balance, amount);
       // Card does not enough have balance
       // Expecting a false boolean variable
-      if (card_payment->pay(24.55) == 0) {
+      if (card_payment->pay(24.55) == 1) {
         cout << "Test 4 for card payment failed!" << endl;
       }
     }

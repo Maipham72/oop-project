@@ -1,6 +1,7 @@
 #include <iostream>
-#include "valid.cpp"
+
 #include "Burger.h"
+#include "valid.cpp"
 
 Burger BurgerChoice() {
   system("clear");
@@ -10,26 +11,26 @@ Burger BurgerChoice() {
   bool makingBurger = true;
   do {
     cout << "You have selected burger, what bun type do you want to choose? \n"
-          << "[1] Plain    [2] Potato" << endl;
+         << "[1] Plain    [2] Potato" << endl;
     cin >> bunType;
 
     cout << endl;
 
     cout << "What meat do you want? \n"
-        << "[1] Chicken  [2] Beef" << endl;
+         << "[1] Chicken  [2] Beef" << endl;
     cin >> meatType;
 
     if (!(std::cin)) {
-        system("clear");
-        cout << "Invalid. Try again" << endl; 
-        clearInput();
-        continue; 
-    } 
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      clearInput();
+      continue;
+    }
 
     if (!isNumValid(bunType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
-      continue; 
+      continue;
     } else {
       makingBurger = true;
     }
@@ -37,7 +38,7 @@ Burger BurgerChoice() {
     if (!isNumValid(meatType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
-      continue; 
+      continue;
     } else {
       makingBurger = true;
     }
@@ -58,11 +59,14 @@ Burger BurgerChoice() {
         burger.setMeatType("chicken");
         burger.print();
         return burger;
+      } else if (bunType == 2 && meatType == 2) {
+        burger.setBunType("potato");
+        burger.setMeatType("beef");
+        burger.print();
+        return burger;
       }
     }
+  } while (true);
+  std::cin.get();
+  return burger;
 }
-    while (true);
-    std::cin.get();
-    return burger;
-}
-  
