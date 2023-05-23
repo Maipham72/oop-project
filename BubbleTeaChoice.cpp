@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include "BubbleTea.h"
-bool isNumValid(int data);
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
 void clearInput();
 BubbleTea BubbleTeaChoice() {
   system("clear");
@@ -20,7 +21,7 @@ BubbleTea BubbleTeaChoice() {
     cin >> tea;
     cout << endl;
 
-    if (!isNumValid(tea)) {
+    if (!isNumValidTwo(tea)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;
@@ -33,7 +34,7 @@ BubbleTea BubbleTeaChoice() {
          << endl;
     cin >> sugarLevel;
 
-    if (!isNumValid(sugarLevel)) {
+    if (!isNumValidThree(sugarLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;
@@ -52,7 +53,7 @@ BubbleTea BubbleTeaChoice() {
       continue;
     }
 
-    if (!isNumValid(iceLevel)) {
+    if (!isNumValidThree(iceLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;

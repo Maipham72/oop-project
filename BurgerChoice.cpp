@@ -2,7 +2,9 @@
 
 #include "Burger.h"
 
-bool isNumValid(int data);
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
+
 void clearInput();
 Burger BurgerChoice() {
   system("clear");
@@ -14,7 +16,7 @@ Burger BurgerChoice() {
     cout << "You have selected burger, what bun type do you want to choose? \n"
          << "[1] Plain    [2] Potato" << endl;
     cin >> bunType;
-    if (!isNumValid(bunType)) {
+    if (!isNumValidTwo(bunType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;
@@ -35,7 +37,7 @@ Burger BurgerChoice() {
       continue;
     }
 
-    if (!isNumValid(meatType)) {
+    if (!isNumValidTwo(meatType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;

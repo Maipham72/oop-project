@@ -7,7 +7,8 @@
 //   single = 1,
 //   doubleshot = 2
 // };
-bool isNumValid(int data);
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
 void clearInput();
 
 Coffee coffeeChoice() {
@@ -24,7 +25,7 @@ Coffee coffeeChoice() {
          << "[1] decaf    [2] single     [3] double" << endl;
     cin >> shots;
 
-    if (!isNumValid(shots)) {
+    if (!isNumValidThree(shots)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;
@@ -37,7 +38,7 @@ Coffee coffeeChoice() {
          << endl;
     cin >> sugarLevel;
 
-    if (!isNumValid(sugarLevel)) {
+    if (!isNumValidTwo(sugarLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;
@@ -50,7 +51,7 @@ Coffee coffeeChoice() {
          << "Press [1] 100, [2] 50 [3] 25" << endl;
     cin >> iceLevel;
 
-    if (!isNumValid(iceLevel)) {
+    if (!isNumValidThree(iceLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;

@@ -18,7 +18,10 @@
 #include "printArt.cpp"
 
 using namespace std;
-bool isNumValid(int data);
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
+bool isNumValidFour(int data);
+
 void clearInput();
 BubbleTea BubbleTeaChoice();
 Burger BurgerChoice();
@@ -56,7 +59,7 @@ int main(void) {
         clearInput();
         continue;
       }
-      if (!isNumValid(menu)) {
+      if (!isNumValidTwo(menu)) {
         cout << "Invalid. Try again" << endl;
         continue;
       }
@@ -89,7 +92,7 @@ int main(void) {
         clearInput();
         continue;
       }
-      if (!isNumValid(choice)) {
+      if (!isNumValidFour(choice)) {
         cout << "Invalid. Try again" << endl;
         continue;
       }
@@ -122,7 +125,7 @@ int main(void) {
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }
@@ -175,7 +178,7 @@ int main(void) {
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }
@@ -226,7 +229,7 @@ int main(void) {
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }
@@ -278,7 +281,7 @@ int main(void) {
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }

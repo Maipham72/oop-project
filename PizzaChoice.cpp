@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include "Pizza.h"
-bool isNumValid(int data);
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
 void clearInput() ;
 Pizza PizzaChoice() {
   system("clear");
@@ -21,7 +22,7 @@ Pizza PizzaChoice() {
       clearInput();
       continue;
     }
-    if (!isNumValid(topping_choice)) {
+    if (!isNumValidTwo(topping_choice)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;
