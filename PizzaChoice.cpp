@@ -3,12 +3,12 @@
 #include "Pizza.h"
 bool isNumValidTwo(int data);
 bool isNumValidThree(int data);
-void clearInput() ;
+void clearInput();
 Pizza PizzaChoice() {
   system("clear");
   Pizza pizza("Pepperoni");
-  int topping_choice;
-  bool topping = 0;
+  int topping_choice = 0;
+  bool makingPizza = true;
   do {
     cout << "You have selected a pizza. What topping do you want?\n"
          << "[1] Pineapple "
@@ -26,9 +26,11 @@ Pizza PizzaChoice() {
       system("clear");
       cout << "Invalid. Try again" << endl;
       continue;
+    } else {
+      makingPizza = true;
     }
 
-    while (topping != false) {
+    while (makingPizza != false) {
       if (topping_choice == 1) {
         pizza.setTopping("Pineapple");
         pizza.print();
