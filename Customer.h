@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 #include "Cart.h"
 #include "MenuItem.h"
 
@@ -9,7 +10,7 @@
 // this class represent a customer
 class Customer {
  private:
-  Cart* customerCart; //aggregated with the Cart class
+  Cart* customerCart;  // aggregated with the Cart class
 
  public:
   // Default constructor

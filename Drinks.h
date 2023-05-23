@@ -6,15 +6,15 @@
 #define DRINKS_H
 
 // this class represent the drinks
-class Drinks : public MenuItem { //inherits from the MenuItem class
+class Drinks : public MenuItem {  // inherits from the MenuItem class
  private:
-  int iceLevel; // the level of the ice in the drink
-  int sugarLevel; // the level of the sugar in the drink
+  int iceLevel;    // the level of the ice in the drink
+  int sugarLevel;  // the level of the sugar in the drink
 
  public:
   // Default constructor
   Drinks() {
-    this->names = "Drinks"; // 
+    this->names = "Drinks";  //
     this->price = 0;
     this->iceLevel = 100;
     this->sugarLevel = 100;

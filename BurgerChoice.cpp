@@ -25,7 +25,7 @@ Burger BurgerChoice() {
       clearInput();
       continue;
     }
-    //Validating input
+    // Validating input
     if (!isNumValidTwo(bunType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -46,7 +46,7 @@ Burger BurgerChoice() {
       clearInput();
       continue;
     }
-    //Validating input
+    // Validating input
     if (!isNumValidTwo(meatType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;

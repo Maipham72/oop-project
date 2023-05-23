@@ -32,7 +32,7 @@ Coffee coffeeChoice() {
       clearInput();
       continue;
     }
-    //Validating input
+    // Validating input
     if (!isNumValidThree(shots)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -54,7 +54,7 @@ Coffee coffeeChoice() {
       clearInput();
       continue;
     }
-    //Validating input
+    // Validating input
     if (!isNumValidTwo(sugarLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -62,7 +62,7 @@ Coffee coffeeChoice() {
     } else {
       makingCoffee = true;
     }
-    
+
     cout << endl;
 
     cout << "What is your preferred ice level \n"
@@ -75,7 +75,7 @@ Coffee coffeeChoice() {
       clearInput();
       continue;
     }
-    //Validating input
+    // Validating input
     if (!isNumValidThree(iceLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;

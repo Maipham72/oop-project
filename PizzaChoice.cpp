@@ -25,7 +25,7 @@ Pizza PizzaChoice() {
       clearInput();
       continue;
     }
-    //Validating input
+    // Validating input
     if (!isNumValidTwo(topping_choice)) {
       system("clear");
       cout << "Invalid. Try again" << endl;

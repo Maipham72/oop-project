@@ -7,17 +7,17 @@
 #define CART_H
 
 // this class represents a cart
-class Cart{
+class Cart {
  protected:
-  float total;  //the total price of the cart
-  std::vector<MenuItem> item_list; //item list in the cart
-  int count = 0; //number of items in the cart
+  float total;                      // the total price of the cart
+  std::vector<MenuItem> item_list;  // item list in the cart
+  int count = 0;                    // number of items in the cart
 
-  public:
- //Default constructor
+ public:
+  // Default constructor
   Cart() { total = 0; }
 
-//Prints out the items in the cart
+  // Prints out the items in the cart
   void getCartItem() {
     for (long unsigned int i = 0; i < item_list.size(); i++) {
       cout << item_list[i].getName() << " " << item_list[i].getPrice() << endl;
@@ -33,7 +33,6 @@ class Cart{
 
   // Return the total of the cart
   float getTotal() { return total; }
-
 
   // Deallocate memory
   ~Cart() { this->item_list.clear(); }

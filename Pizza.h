@@ -1,14 +1,14 @@
 #ifndef PIZZA_H
 #define PIZZA_H
-#include "MenuItem.h"
-
 #include <iostream>
 #include <string>
 
+#include "MenuItem.h"
+
 // this class represent a pizza
-class Pizza : public MenuItem { // inherits from MenuItem class
+class Pizza : public MenuItem {  // inherits from MenuItem class
  private:
-  std::string topping; // the topping of the pizza
+  std::string topping;  // the topping of the pizza
  public:
   // Default constructor
   Pizza() : MenuItem(), topping("") {}
@@ -17,19 +17,17 @@ class Pizza : public MenuItem { // inherits from MenuItem class
   Pizza(std::string topping) : MenuItem("Pizza", 10), topping(topping) {}
 
   // Sets the type of topping
-  void setTopping(std::string topping) { 
-    this->topping = topping; 
-  }
+  void setTopping(std::string topping) { this->topping = topping; }
 
   // Returns the type of topping
   std::string getTopping() { return topping; }
 
-    // Print function that overrides the one in the menuItem class
+  // Print function that overrides the one in the menuItem class
   void print() {
     std::cout << this->names << " is " << this->price
-              << " dollars and its topping is " << this->topping << ". Happy eating!" << std::endl;
+              << " dollars and its topping is " << this->topping
+              << ". Happy eating!" << std::endl;
   }
-
 };
 
 #endif

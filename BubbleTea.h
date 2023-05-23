@@ -7,9 +7,9 @@
 #ifndef BUBBLETEA_H
 #define BUBBLETEA_H
 
-class BubbleTea : public Drinks { // inherits from the Drinks class
+class BubbleTea : public Drinks {  // inherits from the Drinks class
  private:
-  std::string teaType; // type of tea
+  std::string teaType;  // type of tea
 
  public:
   // Default Constructor
@@ -30,7 +30,8 @@ class BubbleTea : public Drinks { // inherits from the Drinks class
     std::cout << this->names << " is " << this->price
               << " dollars and has an ice level of " << this->getIceLevel()
               << " ,sugar level of " << this->getSugarLevel()
-              << " and its tea type is " << this->teaType << ". Happy drinking!" << std::endl;
+              << " and its tea type is " << this->teaType << ". Happy drinking!"
+              << std::endl;
   }
 };
 

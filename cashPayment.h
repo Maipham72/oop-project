@@ -5,10 +5,10 @@
 #define CASHPAYMENT_H
 
 // this class represent cash payment
-class cashPayment : public Payment { // inherits from Payment class
+class cashPayment : public Payment {  // inherits from Payment class
  private:
   bool paid;
-  float change; //the change given back (if any)
+  float change;  // the change given back (if any)
   /*Prints out a message whenever payment is successful*/
   void ProcessCash(bool paid) {
     if (paid == 1) {

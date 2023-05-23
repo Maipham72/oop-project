@@ -16,7 +16,7 @@ class CardPaymentTest {
     {
       float amount = 11.55;
       float balance = 30.00;
-      CardPayment *card_payment =  new CardPayment(balance, amount);
+      CardPayment *card_payment = new CardPayment(balance, amount);
       // Paying exact amount and enough balance
       // Expecting a true boolean variable
       if (card_payment->pay(amount) == 0) {
@@ -62,20 +62,20 @@ class CardPaymentTest {
     {
       float amount = 34.55;
       float balance = 34.54;
-      CardPayment *card_payment = new CardPayment(balance,amount);
+      CardPayment *card_payment = new CardPayment(balance, amount);
       // Card does not have enough balance
       // Expecting a false boolean variable +
       if (card_payment->pay(amount) == 1) {
         cout << "Test 5 for card payment failed!" << endl;
       }
     }
-     // Test 6
+    // Test 6
     {
       float amount = 3;
       float balance = 2;
       CardPayment *card_payment = new CardPayment(balance, amount);
       // Card does not have enough balance
-      // Expecting a false boolean variable 
+      // Expecting a false boolean variable
       if (card_payment->pay(amount) == 1) {
         cout << "Test 6 for card payment failed!" << endl;
       }

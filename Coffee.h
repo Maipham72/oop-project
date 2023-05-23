@@ -5,9 +5,9 @@
 #define COFFEE_H
 
 // this class represents a coffee
-class Coffee : public Drinks { //inherits from the Drinks class
+class Coffee : public Drinks {  // inherits from the Drinks class
  private:
-  int caffeineLevel; // the level of desire caffeine
+  int caffeineLevel;  // the level of desire caffeine
 
  public:
   // Default constructor
@@ -30,7 +30,8 @@ class Coffee : public Drinks { //inherits from the Drinks class
   void print() {
     std::cout << this->names << " is " << this->price
               << " dollars and has an ice level of " << this->getIceLevel()
-              << " ,sugar level of " << this->getSugarLevel() << ". Happy drinking!" << std::endl;
+              << " ,sugar level of " << this->getSugarLevel()
+              << ". Happy drinking!" << std::endl;
   }
 };
 

@@ -8,7 +8,7 @@
 This class represents when the user chooses the card payment option.*/
 class CardPayment : public Payment {
  private:
-  float cardBalance; // the balance of the card
+  float cardBalance;  // the balance of the card
   // Prints out a message if payment is sucessful or not
   void ProcessCard(bool paid) {
     if (paid == 1) {

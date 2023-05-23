@@ -407,7 +407,6 @@ finish:
       }
     }
   }
-  delete(cust1);
-  //hii
+  delete (cust1);
   return 0;
 }

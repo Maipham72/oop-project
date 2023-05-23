@@ -5,10 +5,10 @@
 #include "MenuItem.h"
 
 // this class represents a burger
-class Burger : public MenuItem { //inherits from MenuItem class
+class Burger : public MenuItem {  // inherits from MenuItem class
  private:
-  std::string meatType; // type of meat
-  std::string bunType; // type of bun
+  std::string meatType;  // type of meat
+  std::string bunType;   // type of bun
 
  public:
   // Default constructor
@@ -34,7 +34,8 @@ class Burger : public MenuItem { //inherits from MenuItem class
   void print() {
     std::cout << this->names << " is " << this->price
               << " dollars and its bun type is " << this->bunType
-              << " ,and meat type is " << this->meatType << ". Happy eating!" << endl;
+              << " ,and meat type is " << this->meatType << ". Happy eating!"
+              << endl;
   }
 };
 
