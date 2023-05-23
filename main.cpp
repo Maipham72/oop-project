@@ -398,11 +398,9 @@ finish:
               card_Payment = false;
             }
           }
-
+          // calling the pay function
           CardPayment card1(balance, cust1->getTotal());
           card1.pay(cust1->getTotal());
-          // calling the pay function
-
         } while (card_Payment);
         std::cin.get();
         break;
