@@ -6,11 +6,12 @@
 #ifndef CART_H
 #define CART_H
 
+// this class represents a cart
 class Cart{
  protected:
-  float total;
-  std::vector<MenuItem> item_list;
-  int count = 0;
+  float total;  //the total price of the cart
+  std::vector<MenuItem> item_list; //item list in the cart
+  int count = 0; //number of items in the cart
 
   public:
  //Default constructor

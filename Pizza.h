@@ -5,9 +5,10 @@
 #include <iostream>
 #include <string>
 
-class Pizza : public MenuItem {
+// this class represent a pizza
+class Pizza : public MenuItem { // inherits from MenuItem class
  private:
-  std::string topping;
+  std::string topping; // the topping of the pizza
  public:
   // Default constructor
   Pizza() : MenuItem(), topping("") {}

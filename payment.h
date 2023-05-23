@@ -3,17 +3,15 @@
 #define PAYMENT_H
 #include "Customer.h"
 
-//Abstract class
+//Abstract class for payment method
 class Payment {
  protected:
   float amount;
-  int orderID;
 
  public:
  //Default constructor
   Payment() {
     amount = 0;
-    orderID = 0;
   }
 
   //Returns the payment amount

@@ -4,6 +4,7 @@ using namespace std;
 #ifndef MENUITEM_H
 #define MENUITEM_H
 
+// this class represent the items in the menu
 class MenuItem {
  protected:
   std::string names;

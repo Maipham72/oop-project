@@ -4,10 +4,11 @@
 
 #include "MenuItem.h"
 
-class Burger : public MenuItem {
+// this class represents a burger
+class Burger : public MenuItem { //inherits from MenuItem class
  private:
-  std::string meatType;
-  std::string bunType;
+  std::string meatType; // type of meat
+  std::string bunType; // type of bun
 
  public:
   // Default constructor

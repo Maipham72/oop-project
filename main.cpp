@@ -330,7 +330,6 @@ finish:
     std::cin.get();
   }
 
-
   // cash payment
   if (typeOfPayment == 1) {
     bool cash_Payment = true;
@@ -366,48 +365,49 @@ finish:
   if (typeOfPayment == 2) {
     bool card_Payment = true;
     while (card_Payment != false) {
-    {  // card payment
-      {
-        int balance = 0;
-        do {
-          cout << "How much is your card balance? " << endl
-               << "[1] 50 [2] 30 [3] 10" << endl;
-          cin >> balance;
+      {  // card payment
+        {
+          int balance = 0;
+          do {
+            cout << "How much is your card balance? " << endl
+                 << "[1] 50 [2] 30 [3] 10" << endl;
+            cin >> balance;
 
-          if (!(std::cin)) {
-            system("clear");
-            cout << "Invalid. Try again" << endl;
-            clearInput();
-            continue;
-          }
-
-          if (!isNumValidThree(balance)) {
-            system("clear");
-            cout << "Invalid. Try again" << endl;
-            continue;
-          } else {
-            card_Payment = 1;
-            if (balance == 1) {
-              balance = 50;
-              card_Payment = false;
-            } else if (balance == 2) {
-              balance = 30;
-              card_Payment = false;
-            } else if (balance == 3) {
-              balance = 10;
-              card_Payment = false;
+            if (!(std::cin)) {
+              system("clear");
+              cout << "Invalid. Try again" << endl;
+              clearInput();
+              continue;
             }
-          }
-          // calling the pay function
-          CardPayment card1(balance, cust1->getTotal());
-          card1.pay(cust1->getTotal());
-        } while (card_Payment);
-        std::cin.get();
-        break;
+
+            if (!isNumValidThree(balance)) {
+              system("clear");
+              cout << "Invalid. Try again" << endl;
+              continue;
+            } else {
+              card_Payment = 1;
+              if (balance == 1) {
+                balance = 50;
+                card_Payment = false;
+              } else if (balance == 2) {
+                balance = 30;
+                card_Payment = false;
+              } else if (balance == 3) {
+                balance = 10;
+                card_Payment = false;
+              }
+            }
+            // calling the pay function
+            CardPayment card1(balance, cust1->getTotal());
+            card1.pay(cust1->getTotal());
+          } while (card_Payment);
+          std::cin.get();
+          break;
+        }
       }
     }
   }
-  delete cust1;
+  delete(cust1);
+  //hii
   return 0;
-}
 }

@@ -4,9 +4,10 @@
 #ifndef COFFEE_H
 #define COFFEE_H
 
-class Coffee : public Drinks {
+// this class represents a coffee
+class Coffee : public Drinks { //inherits from the Drinks class
  private:
-  int caffeineLevel;
+  int caffeineLevel; // the level of desire caffeine
 
  public:
   // Default constructor

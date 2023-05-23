@@ -6,9 +6,10 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
+// this class represent a customer
 class Customer {
  private:
-  Cart* customerCart;
+  Cart* customerCart; //aggregated with the Cart class
 
  public:
   // Default constructor
@@ -27,6 +28,6 @@ class Customer {
   void addCart(MenuItem f) { customerCart->addItem(f); }
 
   // Destructor
-  ~Customer() { delete[] customerCart; }
+  ~Customer() { delete customerCart; }
 };
 #endif

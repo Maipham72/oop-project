@@ -5,10 +5,11 @@
 #ifndef DRINKS_H
 #define DRINKS_H
 
-class Drinks : public MenuItem {
+// this class represent the drinks
+class Drinks : public MenuItem { //inherits from the MenuItem class
  private:
-  int iceLevel; 
-  int sugarLevel;
+  int iceLevel; // the level of the ice in the drink
+  int sugarLevel; // the level of the sugar in the drink
 
  public:
   // Default constructor
