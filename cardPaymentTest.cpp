@@ -16,7 +16,7 @@ class CardPaymentTest {
     {
       float amount = 11.55;
       float balance = 30.00;
-      CardPayment *card_payment = new CardPayment(balance, amount);
+      CardPayment *card_payment =  new CardPayment(balance, amount);
       // Paying exact amount and enough balance
       // Expecting a true boolean variable
       if (card_payment->pay(amount) == 0) {
@@ -54,7 +54,7 @@ class CardPaymentTest {
       CardPayment *card_payment = new CardPayment(balance, amount);
       // Card does not enough have balance
       // Expecting a false boolean variable
-      if (card_payment->pay(24.55) == 0) {
+      if (card_payment->pay(24.55) == 1) {
         cout << "Test 4 for card payment failed!" << endl;
       }
     }
@@ -66,7 +66,7 @@ class CardPaymentTest {
       // Card does not have enough balance
       // Expecting a false boolean variable +
       if (card_payment->pay(amount) == 1) {
-        cout << "Test 1 for card payment failed!" << endl;
+        cout << "Test 5 for card payment failed!" << endl;
       }
     }
      // Test 6
@@ -77,14 +77,14 @@ class CardPaymentTest {
       // Card does not have enough balance
       // Expecting a false boolean variable 
       if (card_payment->pay(amount) == 1) {
-        cout << "Test 1 for card payment failed!" << endl;
+        cout << "Test 6 for card payment failed!" << endl;
       }
     }
   }
 
   // Tests to test for the boundary values for card payment
   void testZeroValue() {
-    // Test 6
+    // Test 7
     {
       float amount = 0;
       float balance = 0;
@@ -92,7 +92,7 @@ class CardPaymentTest {
       // Paying exact amount
       // Expecting a true boolean variable
       if (card_payment->pay(amount) == 0) {
-        cout << "Test 6 for card payment failed!" << endl;
+        cout << "Test 7 for card payment failed!" << endl;
       }
     }
   }

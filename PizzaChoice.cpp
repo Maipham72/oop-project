@@ -1,32 +1,36 @@
 #include <iostream>
-#include "valid.cpp"
-#include "Pizza.h"
 
+#include "Pizza.h"
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
+void clearInput();
 Pizza PizzaChoice() {
   system("clear");
   Pizza pizza("Pepperoni");
-  int topping_choice;
-  bool topping = true;
-    do {
-      cout  << "You have selected a pizza. What topping do you want?\n"
-            << "[1] Pineapple "
-            << " "
-            << "[2] Pepperoni" << endl;
-      cin >> topping_choice;
+  int topping_choice = 0;
+  bool makingPizza = true;
+  do {
+    cout << "You have selected a pizza. What topping do you want?\n"
+         << "[1] Pineapple "
+         << " "
+         << "[2] Pepperoni" << endl;
+    cin >> topping_choice;
 
     if (!(std::cin)) {
       system("clear");
-      cout << "Invalid. Try again" << endl; 
+      cout << "Invalid. Try again" << endl;
       clearInput();
-      continue; 
+      continue;
     }
-    if (!isNumValid(topping_choice)) {
+    if (!isNumValidTwo(topping_choice)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
-      continue; 
-    } 
-    
-    while (topping != false) {
+      continue;
+    } else {
+      makingPizza = true;
+    }
+
+    while (makingPizza != false) {
       if (topping_choice == 1) {
         pizza.setTopping("Pineapple");
         pizza.print();
@@ -37,8 +41,7 @@ Pizza PizzaChoice() {
         return pizza;
       }
     }
-}
-    while (true);
-    std::cin.get();
-    return pizza;
+  } while (true);
+  std::cin.get();
+  return pizza;
 }

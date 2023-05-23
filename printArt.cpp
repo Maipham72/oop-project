@@ -2,9 +2,9 @@
 #include <string>
 #include <fstream>
 
-void printArt(string fileName) {
-  string line = "";
-  ifstream inFile;
+void printArt() {
+  std::string line = "";
+  std::ifstream inFile;
   inFile.open("mj.txt");
   {
     while(getline(inFile,line)) {

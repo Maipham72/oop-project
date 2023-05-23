@@ -1,82 +1,111 @@
 #include <iostream>
 
 #include "BubbleTea.h"
-
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
+void clearInput();
 BubbleTea BubbleTeaChoice() {
   system("clear");
   // Bubble Tea initialised to Black Tea by default
   BubbleTea bubbleTea("Black");
-  cout << "You have selected Bubble Tea. What kind of tea do you want with it? \n"
-          "Press [1] for Black, [2] for Green"
-       << endl;
+  bool makingTea = true;
   int tea = 0;
-
-  while (tea != 1 || tea != 2) {
-    cin >> tea;
-    if (tea == 2) {
-      bubbleTea.setTeaType("Green");
-      break;
-    }
-    if (tea == 1) {
-      break;
-    } else {
-      cout << "Error occurred, please try again" << endl
-           << "You have selected Bubble Tea. What kind of tea do you want with "
-              "it? \n"
-              "Press [1] for Black, [2] for Green"
-           << endl;
-    }
-  }
-
-  cout << endl;
-  cout << "What is your preferred sugar level \n"
-          "Press [1] 100, [2] 50 [3] 25"
-       << endl;
   int sugarLevel = 0;
-
-  while (sugarLevel != 1 && sugarLevel != 2 && sugarLevel != 3) {
-    cin >> sugarLevel;
-    if (sugarLevel == 2) {
-      bubbleTea.setSugarLevel(50);
-      break;
-    } else if (sugarLevel == 3) {
-      bubbleTea.setSugarLevel(25);
-    } else if (sugarLevel == 1) {
-      break;
-    } else {
-      cout << "Error occured. Please try again" << endl
-           << "What is your preferred sugar level \n"
-              "Press [1] 100, [2] 50 [3] 25"
-           << endl;
-    }
-  }
-
-  cout << endl;
-  cout << "What is your preferred ice level \n" <<
-          "Press [1] 100, [2] 50 [3] 25"
-       << endl;
   int iceLevel = 0;
 
-  while (iceLevel != 1 &&  iceLevel != 2 && iceLevel != 3) {
-    cin >> iceLevel;
-    if (iceLevel == 2) {
-      bubbleTea.setIceLevel(50);
-      bubbleTea.print();
-      break;
-    } else if (iceLevel == 3) {
-      bubbleTea.setIceLevel(25);
-      bubbleTea.print();
-      break;
-    } else if (iceLevel == 1) {
-      bubbleTea.print();
-      break;
-    } else {
-      bubbleTea.print();
-      cout << "Error occured. Please try again" << endl
-           << "What is your preferred ice level \n"
-              "Press [1] 100, [2] 50 [3] 25"
-           << endl;
+  do {
+    cout << "You have selected Bubble Tea. What kind of tea do you want with "
+            "it? \n"
+            "Press [1] for Black, [2] for Green"
+         << endl;
+    cin >> tea;
+    cout << endl;
+
+    if (!(std::cin)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      clearInput();
+      continue;
     }
-  }
+
+    if (!isNumValidTwo(tea)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      continue;
+    } else {
+      makingTea = true;
+    }
+
+    cout << "What is your preferred sugar level \n"
+            "Press [1] 100, [2] 50 [3] 25"
+         << endl;
+    cin >> sugarLevel;
+
+    if (!(std::cin)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      clearInput();
+      continue;
+    }
+
+    if (!isNumValidThree(sugarLevel)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      continue;
+    } else {
+      makingTea = true;
+    }
+    cout << endl;
+    
+    cout << "What is your preferred ice level \n"
+         << "Press [1] 100, [2] 50 [3] 25" << endl;
+    cin >> iceLevel;
+
+    if (!(std::cin)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      clearInput();
+      continue;
+    }
+
+    if (!isNumValidThree(iceLevel)) {
+      system("clear");
+      cout << "Invalid. Try again" << endl;
+      continue;
+    } else {
+      makingTea = true;
+    }
+
+    while (makingTea != false) {
+      if (tea == 2) {
+        bubbleTea.setTeaType("Green");
+      } else if (tea == 1) {
+      };
+
+      if (sugarLevel == 1) {
+        bubbleTea.setSugarLevel(100);
+      } else if (sugarLevel == 2) {
+        bubbleTea.setSugarLevel(50);
+      } else if (sugarLevel == 3) {
+        bubbleTea.setSugarLevel(25);
+      }
+
+      if (iceLevel == 1) {
+        bubbleTea.setIceLevel(100);
+        bubbleTea.print();
+        return bubbleTea;
+      } else if (iceLevel == 2) {
+        bubbleTea.setIceLevel(50);
+        bubbleTea.print();
+        return bubbleTea;
+
+      } else if (iceLevel == 3) {
+        bubbleTea.setIceLevel(25);
+        bubbleTea.print();
+        return bubbleTea;
+      }
+    }
+  } while (true);
+  std::cin.get();
   return bubbleTea;
 };

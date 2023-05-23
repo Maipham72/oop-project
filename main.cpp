@@ -5,25 +5,25 @@
 #include <limits>
 #include <string>
 #include <thread>
+
 #include "BubbleTea.h"
-#include "BubbleTeaChoice.cpp"
 #include "Burger.h"
-#include "BurgerChoice.cpp"
 #include "Cart.h"
 #include "Coffee.h"
-#include "CoffeeChoice.cpp"
 #include "Customer.h"
 #include "Menu.cpp"
 #include "Pizza.h"
-#include "PizzaChoice.cpp"
-#include "Store.h"
 #include "cardPayment.h"
 #include "cashPayment.h"
-#include "printArt.cpp"
-#include "valid.cpp"
 
 using namespace std;
+void printArt();
+bool isNumValidTwo(int data);
+bool isNumValidThree(int data);
+bool isNumValidFour(int data);
+bool isPaymentValid(float data);
 
+void clearInput();
 BubbleTea BubbleTeaChoice();
 Burger BurgerChoice();
 Pizza PizzaChoice();
@@ -42,37 +42,14 @@ int main(void) {
 
   // Welcome sign
   cout << "Welcome " << name << " to MJ Diner! \n" << endl;
-  string fileName = "mj.txt";
-  printArt(fileName);
+  printArt();
 
   cout << endl;
   // setting variables
-  bool showMenu = true;
-  int menu;
 
-  // exception handling for string, negative and out of bound inputs
-  while (showMenu != false) {
-    do {
-      cout << "Type [1] to see the menu: " << endl;
-      cin >> menu;
-      if (!(std::cin)) {
-        cout << "Invalid. Try again" << endl;
-        clearInput();
-        continue;
-      }
-      if (!isNumValid(menu)) {
-        cout << "Invalid. Try again" << endl;
-        continue;
-      }
-      if (menu == 1) {
-        showMenu = false;
-        system("clear");
-        printMenu();
-        break;
-      }
-    } while (true);
-    std::cin.get();
-  }
+  std::chrono::seconds dura(2);
+  std::this_thread::sleep_for(dura);
+  printMenu();
 
   // setting the variables
   bool reOrder = true;
@@ -89,11 +66,12 @@ int main(void) {
       cout << "What do you want to order?" << endl;
       cin >> choice;
       if (!(std::cin)) {
+        system("clear");
         cout << "Invalid. Try again" << endl;
         clearInput();
         continue;
       }
-      if (!isNumValid(choice)) {
+      if (!isNumValidFour(choice)) {
         cout << "Invalid. Try again" << endl;
         continue;
       }
@@ -126,7 +104,7 @@ int main(void) {
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }
@@ -179,7 +157,7 @@ int main(void) {
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }
@@ -230,7 +208,7 @@ int main(void) {
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }
@@ -277,12 +255,13 @@ int main(void) {
               cin >> ordering;
 
               if (!(std::cin)) {
+                system("clear");
                 cout << "Invalid. Try again" << endl;
                 clearInput();
                 continue;
               }
 
-              if (!isNumValid(ordering)) {
+              if (!isNumValidTwo(ordering)) {
                 cout << "Invalid. Try again" << endl;
                 continue;
               }
@@ -314,8 +293,10 @@ int main(void) {
   }
 finish:
 
+  bool payment = 0;
+
   // proceed to payment
-  while (typeOfPayment != 1 && typeOfPayment != 2) {
+  while (payment != 1) {
     // Display items in cart and total
     cust1->viewCart();
     cout << "Your total is: " << cust1->getTotal() << endl;  // get the total
@@ -323,60 +304,112 @@ finish:
     std::chrono::seconds dura(2);
     std::this_thread::sleep_for(dura);
     // payment method cash or card
-    cout << "How would you like to pay? \n"
-         << "Type [1] for Cash, [2] for Card " << endl;
+    do {
+      cout << "How would you like to pay? \n"
+           << "Type [1] for Cash, [2] for Card " << endl;
 
-    cin >> typeOfPayment;
-    if (typeOfPayment == 1 || typeOfPayment == 2) {
-      break;
-    } else {
-      cout << "Invalid input, please try again" << endl;
-    }
+      cin >> typeOfPayment;
+
+      if (!(std::cin)) {
+        system("clear");
+        cout << "Invalid. Try again" << endl;
+        clearInput();
+        payment = true;
+        continue;
+      }
+
+      if (!isNumValidTwo(typeOfPayment)) {
+        system("clear");
+        cout << "Invalid. Try again" << endl;
+        continue;
+      } else {
+        payment = true;
+        break;
+      }
+    } while (payment);
+    std::cin.get();
   }
 
-  if (typeOfPayment == 1) {  // cash payment
-    float payment_Amount = 0;
-    cashPayment cash1(cust1->getTotal());
-    cout << "How much would you like to pay? " << endl;
-    cin >> payment_Amount;
 
-    // If negative amount if entered
-    while (payment_Amount < 0) {
-      cout << "Error, please try again" << endl;
-      cin >> payment_Amount;
+  // cash payment
+  if (typeOfPayment == 1) {
+    bool cash_Payment = true;
+    while (cash_Payment != 0) {
+      float payment_Amount = 0;
+      cashPayment cash1(cust1->getTotal());
+      do {
+        cout << "How much would you like to pay? " << endl;
+        cin >> payment_Amount;
+
+        if (!(std::cin)) {
+          system("clear");
+          cout << "Invalid. Try again" << endl;
+          clearInput();
+          continue;
+        }
+
+        if (!isPaymentValid(payment_Amount)) {
+          system("clear");
+          cout << "Invalid. Try again" << endl;
+          continue;
+        } else {
+          cash1.pay(payment_Amount);
+          cash_Payment = 0;
+          break;
+        }
+      } while (cash_Payment);
+      std::cin.get();
     }
-
-    // calling the pay function
-    cash1.pay(payment_Amount);
-
-    // user has to know their card balance inorder to complete payment
-  } else if (typeOfPayment == 2) {  // card payment
-    int balance = 0;
-    cout << "How much is your card balance? " << endl
-         << "[1] 50 [2] 30 [3] 10" << endl;
-    cin >> balance;
-
-    cout << endl;
-
-    // If negative amount if entered
-    while (balance != 1 && balance != 2 && balance != 3) {
-      cout << "Error, please try again" << endl;
-      cout << "How much is your card balance? " << endl
-           << "[1] 50 [2] 30 [3] 10" << endl;
-      cin >> balance;
-    }
-    if (balance == 1) {
-      balance = 50;
-    } else if (balance == 2) {
-      balance = 30;
-    } else if (balance == 3) {
-      balance = 10;
-    }
-
-    CardPayment card1(balance, cust1->getTotal());
-    // calling the pay function
-    card1.pay(cust1->getTotal());
+    return 0;
   }
 
+  if (typeOfPayment == 2) {
+    bool card_Payment = true;
+    while (card_Payment != false) {
+    {  // card payment
+      {
+        int balance = 0;
+        do {
+          cout << "How much is your card balance? " << endl
+               << "[1] 50 [2] 30 [3] 10" << endl;
+          cin >> balance;
+
+          if (!(std::cin)) {
+            system("clear");
+            cout << "Invalid. Try again" << endl;
+            clearInput();
+            continue;
+          }
+
+          if (!isNumValidThree(balance)) {
+            system("clear");
+            cout << "Invalid. Try again" << endl;
+            continue;
+          } else {
+            card_Payment = 1;
+            if (balance == 1) {
+              balance = 50;
+              card_Payment = false;
+            } else if (balance == 2) {
+              balance = 30;
+              card_Payment = false;
+            } else if (balance == 3) {
+              balance = 10;
+              card_Payment = false;
+            }
+          }
+
+          CardPayment card1(balance, cust1->getTotal());
+          card1.pay(cust1->getTotal());
+          // calling the pay function
+
+        } while (card_Payment);
+        std::cin.get();
+        break;
+      }
+    }
+  }
+  delete cust1;
   return 0;
+}
 }
