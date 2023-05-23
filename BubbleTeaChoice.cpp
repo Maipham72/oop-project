@@ -4,6 +4,7 @@
 bool isNumValidTwo(int data);
 bool isNumValidThree(int data);
 void clearInput();
+/*A function that will be called when the customer chooses to order a bubble tea*/
 BubbleTea BubbleTeaChoice() {
   system("clear");
   // Bubble Tea initialised to Black Tea by default
@@ -27,7 +28,7 @@ BubbleTea BubbleTeaChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidTwo(tea)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -47,7 +48,7 @@ BubbleTea BubbleTeaChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidThree(sugarLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -67,7 +68,7 @@ BubbleTea BubbleTeaChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidThree(iceLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;

@@ -11,6 +11,7 @@ bool isNumValidTwo(int data);
 bool isNumValidThree(int data);
 void clearInput();
 
+/*A function that will be called when the customer chooses to order a coffee*/
 Coffee coffeeChoice() {
   system("clear");
   Coffee coffee(0);
@@ -31,7 +32,7 @@ Coffee coffeeChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidThree(shots)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -53,7 +54,7 @@ Coffee coffeeChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidTwo(sugarLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -74,7 +75,7 @@ Coffee coffeeChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidThree(iceLevel)) {
       system("clear");
       cout << "Invalid. Try again" << endl;

@@ -4,11 +4,14 @@
 bool isNumValidTwo(int data);
 bool isNumValidThree(int data);
 void clearInput();
+
+/*A function that will be called when the customer chooses to order a pizza*/
 Pizza PizzaChoice() {
   system("clear");
   Pizza pizza("Pepperoni");
   int topping_choice = 0;
   bool makingPizza = true;
+
   do {
     cout << "You have selected a pizza. What topping do you want?\n"
          << "[1] Pineapple "
@@ -22,6 +25,7 @@ Pizza PizzaChoice() {
       clearInput();
       continue;
     }
+    //Validating input
     if (!isNumValidTwo(topping_choice)) {
       system("clear");
       cout << "Invalid. Try again" << endl;

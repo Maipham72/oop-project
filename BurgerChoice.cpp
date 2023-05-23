@@ -6,6 +6,8 @@ bool isNumValidTwo(int data);
 bool isNumValidThree(int data);
 
 void clearInput();
+
+/*A function that will be called when the customer chooses to order a burger*/
 Burger BurgerChoice() {
   system("clear");
   Burger burger("chicken", "plain");
@@ -23,7 +25,7 @@ Burger BurgerChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidTwo(bunType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
@@ -44,7 +46,7 @@ Burger BurgerChoice() {
       clearInput();
       continue;
     }
-
+    //Validating input
     if (!isNumValidTwo(meatType)) {
       system("clear");
       cout << "Invalid. Try again" << endl;
