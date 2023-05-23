@@ -377,7 +377,5 @@ finish:
     card1.pay(cust1->getTotal());
   }
 
-  // Deallocating memory
-  delete (cust1);
   return 0;
 }
